@@ -3,6 +3,8 @@ package RainforestRetail.server.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,9 +20,8 @@ public class Route {
     @JsonIgnoreProperties({"routes"})
     private List<Waypoint> listOfWaypoints;
 
-    public Route(long id, List<Waypoint> listOfWaypoints) {
-        this.id = id;
-        this.listOfWaypoints = listOfWaypoints;
+    public Route(List<Waypoint> listOfWaypoints) {
+        this.listOfWaypoints = new ArrayList<>();
     }
 
     public Route() {

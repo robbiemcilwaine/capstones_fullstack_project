@@ -27,24 +27,23 @@ public class Delivery {
     @Column(name = "delivery_status", nullable = false)
     private DeliveryStatus deliveryStatus;
 
-    //Many to one relationship with Route
-    @ManyToOne
-    @JoinColumn(name = "route_id")
-    @JsonIgnoreProperties({"deliveries"})
-    private Route route;
+//    //Many to one relationship with Route
+//    @ManyToOne
+//    @JoinColumn(name = "route_id")
+//    @JsonIgnoreProperties({"deliveries"})
+//    private Route route;
 
     // One to one relationship with waypoint
     @OneToOne(mappedBy = "deliveries")
     @JsonIgnoreProperties({"deliveries"})
     private Waypoint waypoint;
 
-    public Delivery(String customerName, String address, String postalDistrict, boolean driverAssigned, DeliveryStatus deliveryStatus, Route route, Waypoint waypoint) {
+    public Delivery(String customerName, String address, String postalDistrict, boolean driverAssigned, DeliveryStatus deliveryStatus, Waypoint waypoint) {
         this.customerName = customerName;
         this.address = address;
         this.postalDistrict = postalDistrict;
         this.driverAssigned = driverAssigned;
         this.deliveryStatus = deliveryStatus;
-        this.route = route;
         this.waypoint = waypoint;
     }
 
@@ -99,13 +98,13 @@ public class Delivery {
         this.deliveryStatus = deliveryStatus;
     }
 
-    public Route getRoute() {
-        return route;
-    }
-
-    public void setRoute(Route route) {
-        this.route = route;
-    }
+//    public Route getRoute() {
+//        return route;
+//    }
+//
+//    public void setRoute(Route route) {
+//        this.route = route;
+//    }
 
     public Waypoint getWaypoint() {
         return waypoint;

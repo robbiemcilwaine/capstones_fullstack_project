@@ -24,10 +24,9 @@ public class Waypoint {
     @OneToOne
     private Delivery delivery;
 
-    public Waypoint(double latitude, double longitude, Route route, Delivery delivery) {
+    public Waypoint(double latitude, double longitude, Delivery delivery) {
         this.latitude = latitude;
         this.longitude = longitude;
-        this.route = route;
         this.delivery = delivery;
     }
 

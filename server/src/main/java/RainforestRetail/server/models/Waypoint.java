@@ -28,6 +28,7 @@ public class Waypoint {
         this.latitude = latitude;
         this.longitude = longitude;
         this.delivery = delivery;
+        this.route = null;
     }
 
     public Waypoint() {

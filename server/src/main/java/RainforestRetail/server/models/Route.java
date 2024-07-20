@@ -16,8 +16,8 @@ public class Route {
     private long id;
 
     //One-to-many relationship with Waypoints
-    @OneToMany(mappedBy = "routes")
-    @JsonIgnoreProperties({"routes"})
+    @OneToMany(mappedBy = "route")
+    @JsonIgnoreProperties({"route"})
     private List<Waypoint> listOfWaypoints;
 
     public Route(List<Waypoint> listOfWaypoints) {

@@ -34,7 +34,7 @@ public class Delivery {
 //    private Route route;
 
     // One to one relationship with waypoint
-    @OneToOne(mappedBy = "deliveries")
+    @OneToOne
     @JsonIgnoreProperties({"deliveries"})
     private Waypoint waypoint;
 

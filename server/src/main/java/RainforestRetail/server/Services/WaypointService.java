@@ -6,11 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-@Component
+@Service
 public class WaypointService {
 
 
@@ -24,10 +25,13 @@ public class WaypointService {
     private RestTemplate restTemplate;
 
 
-    public GeocodeResponse getLatLong(){
-       ResponseEntity<GeocodeResponse> response = restTemplate.exchange(url, HttpMethod.GET, null, GeocodeResponse.class);
-       GeocodeResponse body = response.getBody();
-        return  body;
+    public GeocodeResponse getLatLong() {
+        ResponseEntity<GeocodeResponse> response = restTemplate.exchange(url, HttpMethod.GET, null, GeocodeResponse.class);
+        GeocodeResponse body = response.getBody();
+        if (body == null) {
+            System.out.println("loading");
+        }
+        return body;
     }
 
 

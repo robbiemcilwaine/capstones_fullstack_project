@@ -34,6 +34,9 @@ public class DataLoader implements ApplicationRunner {
         Waypoint waypoint5 = new Waypoint(53.6458 + Math.random() * 0.01, -1.8164 + Math.random() * 0.01, null);
         Waypoint waypoint6 = new Waypoint(53.6458 + Math.random() * 0.01, -1.8164 + Math.random() * 0.01, null);
 
+//        Delivery delivery200 =  new Delivery("115 Blackberry Lane ");
+//        deliveryRepository.save(delivery200);
+
         waypointRepository.save(waypoint1);
         waypointRepository.save(waypoint2);
         waypointRepository.save(waypoint3);

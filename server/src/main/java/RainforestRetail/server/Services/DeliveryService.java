@@ -1,4 +1,4 @@
 package RainforestRetail.server.Services;
 
-public class DeliveryServices {
+public class DeliveryService {
 }

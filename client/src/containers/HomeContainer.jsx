@@ -1,7 +1,9 @@
+import Dashboard from "../components/Dashboard";
+
 const HomeContainer = () => {
     return (
         <>
-            <h1>HomeContainer</h1>
+            <Dashboard />
         </>
     );
 }

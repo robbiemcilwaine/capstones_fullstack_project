@@ -33,21 +33,21 @@ export default function DeliveryComponent() {
     <Table size="small" style={{ width: 1200 }}>
       <TableHead>
         <TableRow>
-          <TableCell>Route ID</TableCell>
-          <TableCell>Postal District</TableCell>
-          <TableCell>Driver Assigned</TableCell>
-          <TableCell>No. of Deliveries</TableCell>
-          <TableCell>Status</TableCell>
+          <TableCell align="center">Name</TableCell>
+          <TableCell align="center">Address</TableCell>
+          <TableCell align="center">Delivery Id</TableCell>
+          <TableCell align="center">Route Id</TableCell>
+          <TableCell align="center">Delivery Status</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {rows.map((row) => (
           <TableRow key={row.id}>
-            <TableCell>{row.date}</TableCell>
-            <TableCell>{row.name}</TableCell>
-            <TableCell>{row.shipTo}</TableCell>
-            <TableCell>{row.paymentMethod}</TableCell>
-            <TableCell align="right">{`$${row.amount}`}</TableCell>
+            <TableCell align="center">{row.date}</TableCell>
+            <TableCell align="center">{row.name}</TableCell>
+            <TableCell align="center">{row.shipTo}</TableCell>
+            <TableCell align="center">{row.paymentMethod}</TableCell>
+            <TableCell align="center">{`$${row.amount}`}</TableCell>
           </TableRow>
         ))}
       </TableBody>

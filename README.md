@@ -27,7 +27,7 @@ This project will digitise and optimise RainforestRetail's delivery operations, 
 - **Hibernate**
 - **PostgreSQL 15**
 
-###Dependencies
+### Dependencies
 - **Spring Web**
 - **Spring Boot DevTools**
 - **PostgreSQL Driver**

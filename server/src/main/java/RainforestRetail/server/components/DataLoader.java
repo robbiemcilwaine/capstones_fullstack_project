@@ -1,6 +1,7 @@
 package RainforestRetail.server.components;
 
 import RainforestRetail.server.models.Delivery;
+import RainforestRetail.server.models.DeliveryStatus;
 import RainforestRetail.server.models.Waypoint;
 import RainforestRetail.server.repositories.DeliveryRepository;
 import RainforestRetail.server.repositories.RouteRepository;
@@ -43,6 +44,8 @@ public class DataLoader implements ApplicationRunner {
         waypointRepository.save(waypoint4);
         waypointRepository.save(waypoint5);
         waypointRepository.save(waypoint6);
+
+        Delivery delivery = new Delivery("Aaron", 119, "Orchard", "Way", "London", "CR0" , "7UY", false, DeliveryStatus.UNDELIVERED);
 
 
     }

@@ -22,9 +22,18 @@ This project will digitise and optimise RainforestRetail's delivery operations, 
 
 ## Tech Stack - Server Side
 
-- **Java**
-- **Spring Boot**
-- **PostgreSQL**
+- **Java SE 17**
+- **SpringBoot 3.3.0**
+- **Hibernate**
+- **PostgreSQL 15**
+
+###Dependencies
+- **Spring Web**
+- **Spring Boot DevTools**
+- **PostgreSQL Driver**
+- **Spring Data JPA**
+
+
 
 ### How to run this API locally
 
@@ -38,7 +47,8 @@ This project will digitise and optimise RainforestRetail's delivery operations, 
 2. **Create a database**
    ```sh
    createdb rainforest_retail_db
-
+	```
+	
 3. **Fork repository**
    To your computer and run main() in ServerApplication
 

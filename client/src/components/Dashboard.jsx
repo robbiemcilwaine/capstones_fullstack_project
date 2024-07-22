@@ -13,11 +13,11 @@ function createData(id, routeId, postalDistrict, driverAssigned, numberOfDeliver
 }
 
 const rows = [
-  createData(0, 'HD1-XX', 'HD1', false, 10, 'UNDELIVERED'),
-  createData(1, 'HD2-XX', 'HD2', true, 12, 'IN TRANSIT'),
-  createData(2, 'HD3-XX', 'HD3', true, 15, 'DELIVERED'),
-  createData(3, 'HD4-XX', 'HD4', true, 5, 'INTRANSIT'),
-  createData(4, 'HD5-XX', 'HD5', true, 30, 'DELIVERED'),
+  createData(0, 'HD1-XX', 'HD1', false, 10, `${0}/${10}`),
+  createData(1, 'HD2-XX', 'HD2', true, 12, `${3}/${12}`),
+  createData(2, 'HD3-XX', 'HD3', true, 15, `${15}/${15}`),
+  createData(3, 'HD4-XX', 'HD4', true, 5, `${2}/${5}`),
+  createData(4, 'HD5-XX', 'HD5', true, 30, `${30}/${30}`),
 ];
 
 function preventDefault(event) {

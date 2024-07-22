@@ -3,6 +3,7 @@ package RainforestRetail.server.Services;
 
 import RainforestRetail.server.models.*;
 import RainforestRetail.server.models.Position;
+import RainforestRetail.server.repositories.DeliveryRepository;
 import RainforestRetail.server.repositories.PositionRepository;
 import RainforestRetail.server.repositories.WaypointRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,8 @@ public class WaypointService {
 
 //    private static final String apiKey = "6s-l22M1ZHNGlYJixzQoa0rlSYy0YOVwTSAphbBJA0Q";
 
-
+    @Autowired
+    DeliveryRepository deliveryRepository;
     @Autowired
     WaypointRepository waypointRepository;
 
@@ -33,13 +35,15 @@ public class WaypointService {
 
     public Waypoint saveWaypoint(Delivery delivery) {
         GeocodeResponse response = deliveryService.getGeocodeObject(delivery);
-
         GeocodeResponse.Item item = response.getItems().get(0);
         GeocodeResponse.Item.Position position = item.getPosition();
+
+
         Waypoint waypoint = new Waypoint(position.getLat(), position.getLng(), delivery);
-        delivery.setWaypoint(waypoint);
+
         waypointRepository.save(waypoint);
-//        delivery.setWaypoint(waypoint);
+        delivery.setWaypoint(waypoint);
+        deliveryRepository.save(delivery);
         System.out.println("this is the waypoint id" + delivery.getWaypoint().getId());
         return waypoint;
 

@@ -52,7 +52,6 @@ public class Delivery {
     // One to one relationship with waypoint
 
     @OneToOne
-    @JoinColumn(name = "waypoint_id", referencedColumnName = "id")
     private Waypoint waypoint;
 
     public Delivery(String customerName, String houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, boolean driverAssigned, DeliveryStatus deliveryStatus) {
@@ -62,7 +61,6 @@ public class Delivery {
         this.driverAssigned = driverAssigned;
         this.deliveryStatus = deliveryStatus;
         this.waypoint = null;
-
         this.outCode = outCode;
         this.city = city;
         this.streetSuffix = streetSuffix;

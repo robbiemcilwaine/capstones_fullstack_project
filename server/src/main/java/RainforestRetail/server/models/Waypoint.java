@@ -21,7 +21,7 @@ public class Waypoint {
     @JoinColumn(name = "route_id")
     private Route route;
 
-    @OneToOne(mappedBy = "waypoint")
+    @OneToOne
     private Delivery delivery;
 
     public Waypoint(double latitude, double longitude,Delivery delivery) {

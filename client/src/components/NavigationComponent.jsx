@@ -10,6 +10,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import { NavLink } from 'react-router-dom';
+import { Height } from '@mui/icons-material';
+import { height } from '@mui/system';
 
 const NavigationComponent = () => {
   const [state, setState] = React.useState({
@@ -32,14 +35,17 @@ const NavigationComponent = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {['Home', 'Map', 'Deliveries'].map((text, index) => (
+  
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
+            <NavLink to = {`/${text.toLocaleLowerCase()}`}>
+              <ListItemButton>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </NavLink>
           </ListItem>
         ))}
       </List>

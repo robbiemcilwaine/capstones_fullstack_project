@@ -3,6 +3,7 @@ package RainforestRetail.server.controllers;
 
 import RainforestRetail.server.Services.WaypointService;
 import RainforestRetail.server.models.GeocodeResponse;
+import RainforestRetail.server.models.Position;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,8 @@ import static javax.print.attribute.standard.ReferenceUriSchemesSupported.HTTP;
 
 @Controller
 @RestController
-@RequestMapping("/waypoint")
-public class WaypointController {
+@RequestMapping("/position")
+public class PositionController {
 
 
 
@@ -25,9 +26,12 @@ public class WaypointController {
 
 
 
-    @GetMapping
-    public ResponseEntity<GeocodeResponse> getWaypoint(){
-        GeocodeResponse waypoint = waypointService.getGeocodeObject();
-        return new ResponseEntity<>(waypoint, HttpStatus.OK);
+
+    @GetMapping("/save-waypoint")
+    public ResponseEntity<Position> saveWaypoint(){
+        Position savedPosition = waypointService.savePosition();
+        return new ResponseEntity<>(savedPosition, HttpStatus.OK);
     }
+
+
 }

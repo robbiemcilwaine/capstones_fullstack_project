@@ -60,7 +60,7 @@ This project will digitise and optimise RainforestRetail's delivery operations, 
    You may wish to visualise the endpoints in Postman using the JSON segments.
 
 
-## Unified Modeling Language and Entity Relationship Diagram
+## Unified Modeling Language and Entity Relationship Diagram - MVP
 <img width="1102" alt="UML" src="https://github.com/user-attachments/assets/c934b2f0-e1eb-4110-a820-cbb1b34c8d5a">
 <img width="747" alt="ERD" src="https://github.com/user-attachments/assets/36717a50-f759-4fb8-a5f3-c60886377a07">
 

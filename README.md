@@ -2,15 +2,9 @@
 
 ## Project Overview
 
-RainforestRetail is a growing mail-order business facing challenges with its expanding delivery network. This project aims to digitise and optimise the route management system to handle increasing delivery hubs, customers, and orders more efficiently.
+RainforestRetail is a growing mail-order business facing challenges with its expanding delivery network. This project aims to digitise and optimise the route management system to better handle the increasing number of delivery hubs, customers, and orders. By generating efficient delivery routes, we aim to improve parcel delivery efficiency and streamline vehicle utilisation. The system will optimise van assignments based on parcel volume for specific regions and prioritise high volume postcodes. Additionally, it will seamlessly integrate new delivery vans into the network.
 
-## Problem Statement
-
-The project aims to generate efficient delivery routes to improve parcel delivery efficiency and streamline vehicle utilisation. It seeks to optimise van assignment based on parcel volume for specific regions and prioritise high volume postcodes. Additionally, the system will include functionality to seamlessly integrate new delivery vans.
-
-## Current Situation
-
-Currently, the fleet of delivery vehicles is being poorly utilised, with each van covering a fixed route daily regardless of delivery volume. This practice results in underloading or overloading of vehicles. Consequently, delivery times cannot be guaranteed, especially during busy periods, which are likely to see delays.
+Currently, the fleet of delivery vehicles is being poorly utilised, with each van covering a fixed route daily regardless of delivery volume. This results in vehicles being either underloaded or overloaded which leads to inefficiencies. As a result, the company is likely to see delays as delivery times cannot be guaranteed, particularly during busy periods.
 
 ## Potential Limitations
 
@@ -57,3 +51,4 @@ This project will digitise and optimise RainforestRetail's delivery operations, 
 
 
 ## Unified Modeling Language and Entity Relationship Diagram
+

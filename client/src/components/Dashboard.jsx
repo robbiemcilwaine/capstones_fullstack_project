@@ -8,16 +8,16 @@ import TableRow from '@mui/material/TableRow';
 import { Box } from '@mui/material';
 
 // Generate Unassigned Delivery Data
-function createData(id, routeId, postalDistrict, driverAssigned, numberOfDeliveries, status) {
-  return {id, routeId, postalDistrict, driverAssigned, numberOfDeliveries, status };
+function createData(id, routeId, postalDistrict, driverAssigned, numberOfDeliveries, deliveryStatus) {
+  return {id, routeId, postalDistrict, driverAssigned, numberOfDeliveries, deliveryStatus };
 }
 
 const rows = [
-  createData(0, 'HD1-XX', 'HD1', false, 10, `${0}/${10}`),
-  createData(1, 'HD2-XX', 'HD2', true, 12, `${3}/${12}`),
-  createData(2, 'HD3-XX', 'HD3', true, 15, `${15}/${15}`),
-  createData(3, 'HD4-XX', 'HD4', true, 5, `${2}/${5}`),
-  createData(4, 'HD5-XX', 'HD5', true, 30, `${30}/${30}`),
+  createData(0, 'HD1-XX', 'HD1', false, 10, 'UNDELIVERED'),
+  createData(1, 'HD2-XX', 'HD2', true, 12, 'UNDELIVERED'),
+  createData(2, 'HD3-XX', 'HD3', true, 15, 'DELIVERED'),
+  createData(3, 'HD4-XX', 'HD4', true, 5, 'IN TRANSIT'),
+  createData(4, 'HD5-XX', 'HD5', true, 30, 'DELIVERED'),
 ];
 
 function preventDefault(event) {
@@ -36,7 +36,7 @@ export default function Dashboard() {
             <TableCell align="center">Postal District</TableCell>
             <TableCell align="center">Driver Assigned</TableCell>
             <TableCell align="center">No. of Deliveries</TableCell>
-            <TableCell align="center">Status</TableCell>
+            <TableCell align="center">Delivery Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -46,7 +46,7 @@ export default function Dashboard() {
               <TableCell align="center">{`${row.postalDistrict}`}</TableCell>
               <TableCell align="center">{`${row.driverAssigned}`}</TableCell>
               <TableCell align="center">{`${row.numberOfDeliveries}`}</TableCell>
-              <TableCell align="center">{`${row.status}`}</TableCell>
+              <TableCell align="center">{`${row.deliveryStatus}`}</TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -26,18 +26,19 @@ const center = [51.505, -0.09]; //map center
 
 return (
     <>
-    <MapContainer id='map' center={center} zoom={13} scrollWheelZoom={false}>
-
-        <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={position}>
-            <Popup>
-            Starting point. <br />  6 Southwark St, London SE1 1TQ.
-            </Popup>
-        </Marker>
-</MapContainer>
+      <h2>map should show here</h2>
+      <MapContainer id='map' center={center} zoom={13} scrollWheelZoom={false}>
+        
+          <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={position}>
+              <Popup>
+              Starting point. <br />  6 Southwark St, London SE1 1TQ.
+              </Popup>
+          </Marker>
+      </MapContainer>
     </>
 
 )

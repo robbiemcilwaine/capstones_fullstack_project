@@ -1,22 +1,47 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import NavigationComponent from '../components/NavigationComponent';
-import { CssBaseline, Container, Typography } from '@mui/material';
-
+import { RouterProvider, createBrowserRouter, Routes, Route } from 'react-router-dom';
+import HomeContainer from './HomeContainer';
+import Map from '../components/Map';
+import DeliveriesContainer from './DeliveriesContainer';
 
 
 const ParentContainer = () => {
 
+    const router = createBrowserRouter(
+
+        [
+            {
+                path: "/",
+                element: <NavigationComponent />,
+                children: [
+                    {
+                        path: "/",
+                        element: <HomeContainer />
+                    },
+                    {
+                        path: "/map",
+                        element: <Map />
+                    },
+                    {
+                        path: "/deliveries",
+                        element: <DeliveriesContainer />
+                    }
+                ]
+            },
+        ]
+
+    )
+
+    console.log(router);
+
+
     return (
-    <React.Fragment>
-        <CssBaseline />
-        <Container>
-            <Typography variant="h4" component="h1" gutterBottom>
-            Dashboard
-            </Typography>
-            <NavigationComponent />
-        </Container>
-    </React.Fragment>
+        <>
+        <main>
+            <RouterProvider router={router}/>
+        </main>
+        </>
     )
 }
 

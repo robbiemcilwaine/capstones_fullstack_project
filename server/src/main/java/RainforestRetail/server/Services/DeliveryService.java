@@ -2,15 +2,16 @@ package RainforestRetail.server.Services;
 
 import RainforestRetail.server.models.Delivery;
 import RainforestRetail.server.models.GeocodeResponse;
-import RainforestRetail.server.models.Waypoint;
 import RainforestRetail.server.repositories.DeliveryRepository;
-import RainforestRetail.server.repositories.PositionRepository;
 import RainforestRetail.server.repositories.WaypointRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class DeliveryService {
@@ -46,15 +47,31 @@ public class DeliveryService {
         return body;
     }
 
-//    public Waypoint savePosition(Delivery delivery) {
-//        GeocodeResponse response = this.getGeocodeObject(delivery);
-//
-//        GeocodeResponse.Item item = response.getItems().get(0);
-//        GeocodeResponse.Item.Position position = item.getPosition();
-//        Waypoint waypoint = new Waypoint(position.getLat(), position.getLng(),delivery);
-////        waypoint.setLatitude(position.getLat());
-////        waypoint.setLongitude(position.getLng());
-//        return waypointRepository.save(waypoint);
+    public List<Delivery> getAllDeliveries(){
+        return deliveryRepository.findAll();
+    }
+
+    public Delivery getDeliveryById(Long id){
+        return deliveryRepository.findById(id).get();
+
+    }
+
+    public List<Delivery> getDeliveriesByPostalDistrict(String postalDistrict){
+        List<Delivery> allDeliveriesInPostalDistrict =  new ArrayList<>();
+
+        for(Delivery delivery: deliveryRepository.findAll()){
+            if(postalDistrict.equals(delivery.getPostalDistrict())){
+                allDeliveriesInPostalDistrict.add(delivery);
+
+            }
+        }
+
+            return allDeliveriesInPostalDistrict;
+    }
+
+
+
+
 
     }
 

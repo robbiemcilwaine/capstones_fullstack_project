@@ -52,6 +52,7 @@ public class Delivery {
     // One to one relationship with waypoint
 
     @OneToOne
+    @JsonIgnoreProperties({"delivery"})
     private Waypoint waypoint;
 
     public Delivery(String customerName, String houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, boolean driverAssigned, DeliveryStatus deliveryStatus) {

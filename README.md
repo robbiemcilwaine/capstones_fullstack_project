@@ -3,7 +3,7 @@
 ## Summary
  Something
 
-## Tech Stack
+## Tech Stack - Server Side
 
 - **Java**
 - **Spring Boot**
@@ -33,4 +33,4 @@
    You may wish to visualise the endpoints in Postman using the JSON segments.
 
 
-## Unified Modeling Language and Entity Relationship Diagrams
+## Unified Modeling Language and Entity Relationship Diagram

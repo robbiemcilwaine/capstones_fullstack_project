@@ -12,16 +12,12 @@ const ParentContainer = () => {
         <CssBaseline />
         <Container>
             <Typography variant="h4" component="h1" gutterBottom>
-            My Application
+            Dashboard
             </Typography>
             <NavigationComponent />
         </Container>
     </React.Fragment>
     )
-}
-
-export function ButtonUsage() {
-    return <Button variant="contained">Hello world</Button>;
 }
 
 export default ParentContainer; 

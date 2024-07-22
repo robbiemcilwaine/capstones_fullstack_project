@@ -1,3 +1,5 @@
+// Commit 2: Add Navigation Items
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -6,6 +8,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox'; // Placeholder icon
 import { NavLink } from 'react-router-dom';
 import { Toolbar, AppBar, IconButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -26,7 +29,18 @@ const NavigationComponent = () => {
       role="presentation"
     >
       <List>
-        {/* Placeholder for navigation items */}
+        {['Home', 'Map', 'Deliveries'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <NavLink to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <InboxIcon /> {/* Placeholder icon */}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </NavLink>
+          </ListItem>
+        ))}
       </List>
     </Box>
   );

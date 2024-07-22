@@ -33,4 +33,4 @@
    You may wish to visualise the endpoints in Postman using the JSON segments.
 
 
-## API Designs
+## Unified Modeling Language and Entity Relationship Diagrams

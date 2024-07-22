@@ -1,5 +1,7 @@
 package RainforestRetail.server.components;
 
+import RainforestRetail.server.Services.DeliveryService;
+import RainforestRetail.server.Services.WaypointService;
 import RainforestRetail.server.models.Delivery;
 import RainforestRetail.server.models.DeliveryStatus;
 import RainforestRetail.server.models.Waypoint;
@@ -23,29 +25,28 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     WaypointRepository waypointRepository;
 
+    @Autowired
+    DeliveryService deliveryService;
+
+    @Autowired
+    WaypointService waypointService;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        //Waypoints in HD1
-        Waypoint waypoint1 = new Waypoint(53.6458 + Math.random() * 0.01, -1.7798 + Math.random() * 0.01, null);
-        Waypoint waypoint2 = new Waypoint(53.6458 + Math.random() * 0.01, -1.7798 + Math.random() * 0.01, null);
-        Waypoint waypoint3 = new Waypoint(53.6458 + Math.random() * 0.01, -1.7798 + Math.random() * 0.01, null);
 
-        //Waypoints in HD3
-        Waypoint waypoint4 = new Waypoint(53.6458 + Math.random() * 0.01, -1.8164 + Math.random() * 0.01, null);
-        Waypoint waypoint5 = new Waypoint(53.6458 + Math.random() * 0.01, -1.8164 + Math.random() * 0.01, null);
-        Waypoint waypoint6 = new Waypoint(53.6458 + Math.random() * 0.01, -1.8164 + Math.random() * 0.01, null);
+//        Delivery delivery = new Delivery("Aaron", "119", "Orchard", "Way", "London", "CR0" , null, false, DeliveryStatus.UNDELIVERED);
 
-//        Delivery delivery200 =  new Delivery("115 Blackberry Lane ");
-//        deliveryRepository.save(delivery200);
 
-        waypointRepository.save(waypoint1);
-        waypointRepository.save(waypoint2);
-        waypointRepository.save(waypoint3);
-        waypointRepository.save(waypoint4);
-        waypointRepository.save(waypoint5);
-        waypointRepository.save(waypoint6);
+        Delivery delivery1 = new Delivery("Charisma", "11", "Woodhouse","Avenue", "Huddersfield","HD2", "1BP",false,DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery1);
+        waypointService.saveWaypoint(delivery1);
 
-//         Delivery delivery = new Delivery("Aaron", 119, "Orchard", "Way", "London", "CR0" , "7UY", false, DeliveryStatus.UNDELIVERED);
+        Delivery delivery2 =  new Delivery("Aaron", "116", "Halifax","Road","Huddersfield","HD3", "3BS", false, DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery2);
+        waypointService.saveWaypoint(delivery2);
+
+
+
 
 
     }

@@ -55,13 +55,13 @@ public class Delivery {
     @JsonIgnoreProperties({"deliveries"})
     private Waypoint waypoint;
 
-    public Delivery(String customerName, int houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, boolean driverAssigned, DeliveryStatus deliveryStatus, Waypoint waypoint) {
+    public Delivery(String customerName, int houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, boolean driverAssigned, DeliveryStatus deliveryStatus) {
         this.customerName = customerName;
 
         this.postalDistrict = postalDistrict;
         this.driverAssigned = driverAssigned;
         this.deliveryStatus = deliveryStatus;
-        this.waypoint = waypoint;
+        this.waypoint = null;
         this.geocodeUrl = "";
         this.outCode = outCode;
         this.city = city;
@@ -87,14 +87,6 @@ public class Delivery {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getPostalDistrict() {

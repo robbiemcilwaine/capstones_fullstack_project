@@ -5,47 +5,22 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { Box } from '@mui/material';
 
 // Generate Delivery Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(id, name, address, deliveryId, routeId, deliveryStatus) {
+  return { id, name, address, deliveryId, routeId, deliveryStatus};
 }
 
 const rows = [
-  createData(
-    0,
-    '16 Mar, 2019',
-    'Elvis Presley',
-    'Tupelo, MS',
-    'VISA ⠀•••• 3719',
-    312.44,
-  ),
-  createData(
-    1,
-    '16 Mar, 2019',
-    'Paul McCartney',
-    'London, UK',
-    'VISA ⠀•••• 2574',
-    866.99,
-  ),
-  createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
-  createData(
-    3,
-    '16 Mar, 2019',
-    'Michael Jackson',
-    'Gary, IN',
-    'AMEX ⠀•••• 2000',
-    654.39,
-  ),
-  createData(
-    4,
-    '15 Mar, 2019',
-    'Bruce Springsteen',
-    'Long Branch, NJ',
-    'VISA ⠀•••• 5919',
-    212.79,
-  ),
+  createData(0, 'Elvis Presley', '47 Market St, Paddock, Huddersfield HD1 4SH', 1, null, 'UNDELIVERED'),
+  createData(1, 'Tom Cruise', '467 Bradford Rd, Huddersfield HD2 2LL', 2, null, 'UNDELIVERED'),
+  createData(2, 'Benedict Cumberbatch', '75 Acre St, Lindley, Huddersfield HD3 3DZ', 3, null, 'UNDELIVERED'),
+  createData(3, 'Simon Cowell', '1 Robin Hood Hill, Berry Brow, Huddersfield HD4 7QP', 4, null, 'UNDELIVERED'),
+  createData(4, 'Channing Tatum', 'Unit 2, 169 Wakefield Rd, Moldgreen, Huddersfield HD5 9AN', 5, null, 'UNDELIVERED'),
+
 ];
+
 
 function preventDefault(event) {
   event.preventDefault();
@@ -54,32 +29,36 @@ function preventDefault(event) {
 export default function DeliveryComponent() {
   return (
     <React.Fragment>
-      <h1>Unassigned Deliveries</h1>
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell>Route ID</TableCell>
-            <TableCell>Postal District</TableCell>
-            <TableCell>Driver Assigned</TableCell>
-            <TableCell>No. of Deliveries</TableCell>
-            <TableCell>Status</TableCell>
+    <h1>Unassigned Deliveries</h1>
+    <Box sx={{width: '100%', mb: 2}}>
+    <Table size="small" style={{ width: 1200 }}>
+      <TableHead>
+        <TableRow>
+          <TableCell align="left">Name</TableCell>
+          <TableCell align="left">Address</TableCell>
+          <TableCell align="center">Delivery Id</TableCell>
+          <TableCell align="center">Route Id</TableCell>
+          <TableCell align="center">Delivery Status</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {rows.map((row) => (
+          <TableRow key={row.id}>
+            <TableCell align="left">{`${row.name}`}</TableCell>
+            <TableCell align="left">{`${row.address}`}</TableCell>
+            <TableCell align="center">{`${row.deliveryId}`}</TableCell>
+            <TableCell align="center">{`${row.routeId}`}</TableCell>
+            <TableCell align="center">{`${row.deliveryStatus}`}</TableCell>
           </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
+        ))}
+      </TableBody>
+    </Table>
+    </Box>
+    <Box sx={{ textAlign: 'left' }}>
+      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 2 }}>
         See more orders
       </Link>
-    </React.Fragment>
+    </Box>
+  </React.Fragment>
   );
 }

@@ -37,7 +37,11 @@ public class WaypointService {
         GeocodeResponse.Item item = response.getItems().get(0);
         GeocodeResponse.Item.Position position = item.getPosition();
         Waypoint waypoint = new Waypoint(position.getLat(), position.getLng(), delivery);
-        return waypointRepository.save(waypoint);
+        delivery.setWaypoint(waypoint);
+        waypointRepository.save(waypoint);
+//        delivery.setWaypoint(waypoint);
+        System.out.println("this is the waypoint id" + delivery.getWaypoint().getId());
+        return waypoint;
 
 
     }

@@ -14,11 +14,25 @@ public class Delivery {
     @Column(name = "customer_name", nullable = false)
     private String customerName;
 
-    @Column(name = "address", nullable = false)
-    private String address;
+    @Column(name = "house_number", nullable = false)
+    private int houseNumber;
+
+    @Column(name = "street_prefix", nullable = false)
+    private String streetPrefix;
+
+    @Column(name = "street_suffix", nullable = false)
+    private String streetSuffix;
+
+    @Column(name = "city", nullable = false)
+    private String city;
 
     @Column(name = "postal_district", nullable = false)
     private String postalDistrict;
+
+    @Column(name = "out_code", nullable = false)
+    private String outCode;
+
+
 
     @Column(name = "driver_assigned", nullable = false)
     private boolean driverAssigned;
@@ -41,14 +55,19 @@ public class Delivery {
     @JsonIgnoreProperties({"deliveries"})
     private Waypoint waypoint;
 
-    public Delivery(String customerName, String address, String postalDistrict, boolean driverAssigned, DeliveryStatus deliveryStatus, Waypoint waypoint) {
+    public Delivery(String customerName, int houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, boolean driverAssigned, DeliveryStatus deliveryStatus, Waypoint waypoint) {
         this.customerName = customerName;
-        this.address = address;
+
         this.postalDistrict = postalDistrict;
         this.driverAssigned = driverAssigned;
         this.deliveryStatus = deliveryStatus;
         this.waypoint = waypoint;
         this.geocodeUrl = "";
+        this.outCode = outCode;
+        this.city = city;
+        this.streetSuffix = streetSuffix;
+        this.streetPrefix = streetPrefix;
+        this.houseNumber = houseNumber;
     }
 
     public Delivery() {
@@ -102,14 +121,6 @@ public class Delivery {
         this.deliveryStatus = deliveryStatus;
     }
 
-//    public Route getRoute() {
-//        return route;
-//    }
-//
-//    public void setRoute(Route route) {
-//        this.route = route;
-//    }
-
     public String getGeocodeUrl() {
         return geocodeUrl;
     }
@@ -125,5 +136,52 @@ public class Delivery {
     public void setWaypoint(Waypoint waypoint) {
         this.waypoint = waypoint;
     }
+
+    public int getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(int houseNumber) {
+        this.houseNumber = houseNumber;
+    }
+
+    public String getStreetPrefix() {
+        return streetPrefix;
+    }
+
+    public void setStreetPrefix(String streetPrefix) {
+        this.streetPrefix = streetPrefix;
+    }
+
+    public String getStreetSuffix() {
+        return streetSuffix;
+    }
+
+    public void setStreetSuffix(String streetSuffix) {
+        this.streetSuffix = streetSuffix;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getOutCode() {
+        return outCode;
+    }
+
+    public void setOutCode(String outCode) {
+        this.outCode = outCode;
+    }
 }
 
+//    public Route getRoute() {
+//        return route;
+//    }
+//
+//    public void setRoute(Route route) {
+//        this.route = route;
+//    }

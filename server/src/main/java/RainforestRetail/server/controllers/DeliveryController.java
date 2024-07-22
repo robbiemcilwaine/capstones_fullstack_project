@@ -37,7 +37,7 @@ public class DeliveryController {
 
     @GetMapping
     public ResponseEntity<GeocodeResponse> getWaypoint(){
-        Delivery delivery = new Delivery("Aaron", 119, "Orchard", "Way", "London", "CR0" , "7UY", false, DeliveryStatus.UNDELIVERED);
+        Delivery delivery = new Delivery("Aaron", "119", "Orchard", "Way", "London", "CR0" , "7UY", false, DeliveryStatus.UNDELIVERED);
 
 
         GeocodeResponse waypoint = deliveryService.getGeocodeObject(delivery);

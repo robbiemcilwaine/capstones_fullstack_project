@@ -1,9 +1,10 @@
+import DeliveryComponent from "../components/DeliveryComponent";
+
 const DeliveriesContainer = () => {
 
     return (
         <>
-
-            <h3>Deliveries table go here</h3>
+            <DeliveryComponent />
         
         </>
     )

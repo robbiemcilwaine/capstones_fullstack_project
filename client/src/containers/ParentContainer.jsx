@@ -2,8 +2,9 @@ import * as React from 'react';
 import NavigationComponent from '../components/NavigationComponent';
 import { RouterProvider, createBrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeContainer from './HomeContainer';
-import Map from '../components/Map';
 import DeliveriesContainer from './DeliveriesContainer';
+import OurMapContainer from './OurMapContainer';
+
 
 
 const ParentContainer = () => {
@@ -21,7 +22,7 @@ const ParentContainer = () => {
                     },
                     {
                         path: "/map",
-                        element: <Map />
+                        element: <OurMapContainer/>
                     },
                     {
                         path: "/deliveries",

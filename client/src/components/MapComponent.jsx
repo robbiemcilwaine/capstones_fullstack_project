@@ -26,7 +26,6 @@ const center = [51.505, -0.09]; //map center
 
 return (
     <>
-      <h2>map should show here</h2>
       <MapContainer id='map' center={center} zoom={13} scrollWheelZoom={false}>
         
           <TileLayer

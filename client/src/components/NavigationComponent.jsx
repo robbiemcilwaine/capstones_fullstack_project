@@ -6,9 +6,10 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import HomeIcon from '@mui/icons-material/Home';
-import MapIcon from '@mui/icons-material/Map';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import MapRoundedIcon from '@mui/icons-material/MapRounded';
+import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
+import ManageAccountsRoundedIcon from '@mui/icons-material/ManageAccountsRounded';
 import { NavLink } from 'react-router-dom';
 import { Toolbar, AppBar, IconButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -30,9 +31,9 @@ const NavigationComponent = () => {
     >
       <List>
         {[
-          { text: 'Home', icon: <HomeIcon /> },
-          { text: 'Map', icon: <MapIcon /> },
-          { text: 'Deliveries', icon: <LocalShippingIcon /> }
+          { text: 'Home', icon: <HomeRoundedIcon fontSize="medium"/> },
+          { text: 'Map', icon: <MapRoundedIcon fontSize="medium"/> },
+          { text: 'Deliveries', icon: <LocalShippingRoundedIcon fontSize="medium"/> }
         ].map(({ text, icon }) => (
           <ListItem key={text} disablePadding>
             <NavLink to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}>
@@ -68,8 +69,9 @@ const NavigationComponent = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Navigation
+          <Typography variant="h6" noWrap component="div" sx={{ display: 'flex', alignItems: 'center' }}>
+            <ManageAccountsRoundedIcon sx={{ mr: 1 }} fontSize="large"/> {/* New icon */}
+            Rainforest Retail Route Management System
           </Typography>
         </Toolbar>
       </AppBar>

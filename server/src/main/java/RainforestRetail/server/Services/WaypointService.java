@@ -21,7 +21,7 @@ public class WaypointService {
 
 //    private static final String apiKey = "6s-l22M1ZHNGlYJixzQoa0rlSYy0YOVwTSAphbBJA0Q";
 
-    private String url = "https://geocode.search.hereapi.com/v1/geocode?q=155+Blackberry+Lane%2C+Coventry+CV2+3JR%2C+England&apiKey=6s-l22M1ZHNGlYJixzQoa0rlSYy0YOVwTSAphbBJA0Q";
+
 
     @Autowired
     PositionRepository positionRepository;
@@ -29,7 +29,7 @@ public class WaypointService {
     @Autowired
     private RestTemplate restTemplate;
 
-
+    private String url = "https://geocode.search.hereapi.com/v1/geocode?q=155+Blackberry+Lane%2C+Coventry+CV2+3JR%2C+England&apiKey=6s-l22M1ZHNGlYJixzQoa0rlSYy0YOVwTSAphbBJA0Q";
     public GeocodeResponse getGeocodeObject() {
         ResponseEntity<GeocodeResponse> response = restTemplate.exchange(url, HttpMethod.GET, null, GeocodeResponse.class);
         GeocodeResponse body = response.getBody();

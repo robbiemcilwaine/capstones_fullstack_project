@@ -27,6 +27,9 @@ public class Delivery {
     @Column(name = "delivery_status", nullable = false)
     private DeliveryStatus deliveryStatus;
 
+    @Column(name = "geocode_url", nullable = false)
+    private String geocodeUrl;
+
 //    //Many to one relationship with Route
 //    @ManyToOne
 //    @JoinColumn(name = "route_id")
@@ -45,6 +48,7 @@ public class Delivery {
         this.driverAssigned = driverAssigned;
         this.deliveryStatus = deliveryStatus;
         this.waypoint = waypoint;
+        this.geocodeUrl = "";
     }
 
     public Delivery() {
@@ -106,6 +110,14 @@ public class Delivery {
 //        this.route = route;
 //    }
 
+    public String getGeocodeUrl() {
+        return geocodeUrl;
+    }
+
+    public void setGeocodeUrl(String geocodeUrl) {
+        this.geocodeUrl = geocodeUrl;
+    }
+
     public Waypoint getWaypoint() {
         return waypoint;
     }
@@ -114,3 +126,4 @@ public class Delivery {
         this.waypoint = waypoint;
     }
 }
+

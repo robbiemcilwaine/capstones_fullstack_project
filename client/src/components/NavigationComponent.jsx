@@ -13,6 +13,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import { NavLink } from 'react-router-dom';
 import { Height } from '@mui/icons-material';
 import { height } from '@mui/system';
+import { Outlet } from 'react-router-dom'
 
 const NavigationComponent = () => {
   const [state, setState] = React.useState({
@@ -38,7 +39,7 @@ const NavigationComponent = () => {
         {['Home', 'Map', 'Deliveries'].map((text, index) => (
   
           <ListItem key={text} disablePadding>
-            <NavLink to = {`/${text.toLocaleLowerCase()}`}>
+            <NavLink to = {text === 'Home' ? '/' : `/${text.toLowerCase()}`}>
               <ListItemButton>
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -66,6 +67,7 @@ const NavigationComponent = () => {
           </Drawer>
         </React.Fragment>
       ))}
+      <Outlet/>
     </div>
   );
 }

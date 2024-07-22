@@ -41,8 +41,7 @@ public class Delivery {
     @Column(name = "delivery_status", nullable = false)
     private DeliveryStatus deliveryStatus;
 
-    @Column(name = "geocode_url", nullable = false)
-    private String geocodeUrl;
+
 
 //    //Many to one relationship with Route
 //    @ManyToOne
@@ -51,8 +50,9 @@ public class Delivery {
 //    private Route route;
 
     // One to one relationship with waypoint
+
     @OneToOne
-    @JsonIgnoreProperties({"deliveries"})
+    @JsonIgnoreProperties({"delivery"})
     private Waypoint waypoint;
 
     public Delivery(String customerName, String houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, boolean driverAssigned, DeliveryStatus deliveryStatus) {
@@ -62,7 +62,6 @@ public class Delivery {
         this.driverAssigned = driverAssigned;
         this.deliveryStatus = deliveryStatus;
         this.waypoint = null;
-        this.geocodeUrl = "";
         this.outCode = outCode;
         this.city = city;
         this.streetSuffix = streetSuffix;
@@ -113,19 +112,13 @@ public class Delivery {
         this.deliveryStatus = deliveryStatus;
     }
 
-    public String getGeocodeUrl() {
-        return geocodeUrl;
-    }
-
-    public void setGeocodeUrl(String geocodeUrl) {
-        this.geocodeUrl = geocodeUrl;
-    }
 
     public Waypoint getWaypoint() {
         return waypoint;
     }
 
     public void setWaypoint(Waypoint waypoint) {
+        System.out.println("is it setting waypoint?");
         this.waypoint = waypoint;
     }
 

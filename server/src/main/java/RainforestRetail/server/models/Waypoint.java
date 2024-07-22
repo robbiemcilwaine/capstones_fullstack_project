@@ -1,5 +1,6 @@
 package RainforestRetail.server.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -22,6 +23,7 @@ public class Waypoint {
     private Route route;
 
     @OneToOne
+    @JsonIgnoreProperties({"waypoint"})
     private Delivery delivery;
 
     public Waypoint(double latitude, double longitude,Delivery delivery) {

@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "3f2146d4-69a3-487b-a25a-b33d4034f672",
+		"name": "RainforestRetail-Deliveries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35364785",
+		"_collection_link": "https://back-end-hobby-project.postman.co/workspace/Team-Workspace~29d86af9-14da-44c5-8a35-9fdcac8374ab/collection/35364785-3f2146d4-69a3-487b-a25a-b33d4034f672?action=share&source=collection_link&creator=35364785"
+	},
+	"item": [
+		{
+			"name": "gets all waypoints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/waypoints",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"waypoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a waypoint with a specific id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/waypoints/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"waypoints",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gets a list of waypoints for postal district HD2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/waypoints/postalDistrict/HD2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"waypoints",
+						"postalDistrict",
+						"HD2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gets all deliveries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/deliveries",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deliveries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gets a delivery with a specific id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/deliveries/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deliveries",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gets all deliveries for postal district HD2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/deliveries/postalDistrict/HD2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deliveries",
+						"postalDistrict",
+						"HD2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

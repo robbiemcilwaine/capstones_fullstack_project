@@ -1,9 +1,6 @@
 # Rainforest Retail - Deliveries
 
 ## Project Overview
-# RainforestRetail Route Management System
-
-## Project Overview
 
 RainforestRetail is a growing mail-order business facing challenges with its expanding delivery network. This project aims to digitise and optimise the route management system to handle increasing delivery hubs, customers, and orders more efficiently.
 

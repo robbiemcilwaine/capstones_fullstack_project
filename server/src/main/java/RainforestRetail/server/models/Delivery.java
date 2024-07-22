@@ -15,7 +15,7 @@ public class Delivery {
     private String customerName;
 
     @Column(name = "house_number", nullable = false)
-    private int houseNumber;
+    private String houseNumber;
 
     @Column(name = "street_prefix", nullable = false)
     private String streetPrefix;
@@ -55,7 +55,7 @@ public class Delivery {
     @JsonIgnoreProperties({"deliveries"})
     private Waypoint waypoint;
 
-    public Delivery(String customerName, int houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, boolean driverAssigned, DeliveryStatus deliveryStatus) {
+    public Delivery(String customerName, String houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, boolean driverAssigned, DeliveryStatus deliveryStatus) {
         this.customerName = customerName;
 
         this.postalDistrict = postalDistrict;
@@ -129,11 +129,11 @@ public class Delivery {
         this.waypoint = waypoint;
     }
 
-    public int getHouseNumber() {
+    public String getHouseNumber() {
         return houseNumber;
     }
 
-    public void setHouseNumber(int houseNumber) {
+    public void setHouseNumber(String houseNumber) {
         this.houseNumber = houseNumber;
     }
 

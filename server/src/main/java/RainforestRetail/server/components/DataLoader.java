@@ -45,7 +45,7 @@ public class DataLoader implements ApplicationRunner {
         waypointRepository.save(waypoint5);
         waypointRepository.save(waypoint6);
 
-        Delivery delivery = new Delivery("Aaron", 119, "Orchard", "Way", "London", "CR0" , "7UY", false, DeliveryStatus.UNDELIVERED);
+//         Delivery delivery = new Delivery("Aaron", 119, "Orchard", "Way", "London", "CR0" , "7UY", false, DeliveryStatus.UNDELIVERED);
 
 
     }

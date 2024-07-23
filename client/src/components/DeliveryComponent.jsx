@@ -31,26 +31,26 @@ export default function DeliveryComponent({waypointData}) {
     <Table size="small">
       <TableHead>
         <TableRow>
-          <TableCell align="left">Name</TableCell>
-          <TableCell align="left">Address</TableCell>
-          <TableCell align="center">Delivery Id</TableCell>
-          <TableCell align="center">Route Id</TableCell>
-          <TableCell align="center">Delivery Status</TableCell>
+          <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Name</TableCell>
+          <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Address</TableCell>
+          <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Delivery Id</TableCell>
+          <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Route Id</TableCell>
+          <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Delivery Status</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {waypointData.map((waypoint,index) => (
           <TableRow key={index}>
-            <TableCell align="left">{`${waypoint.delivery.customerName}`}</TableCell>
-            <TableCell align="left">{`${waypoint.delivery.houseNumber},
+            <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.customerName}`}</TableCell>
+            <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.houseNumber},
              ${waypoint.delivery.streetPrefix}
               ${waypoint.delivery.streetSuffix},
                 ${waypoint.delivery.city},
                  ${waypoint.delivery.postalDistrict}
                   ${waypoint.delivery.outCode}`}</TableCell>
-            <TableCell align="center">{`${waypoint.delivery.id}`}</TableCell>
-            <TableCell align="center">{`${waypoint.route}`}</TableCell>
-            <TableCell align="center">{`${waypoint.delivery.deliveryStatus}`}</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.id}`}</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.route}`}</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.deliveryStatus}`}</TableCell>
           </TableRow>
         ))}
       </TableBody>

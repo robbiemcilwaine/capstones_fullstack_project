@@ -10,15 +10,13 @@ import Button from '@mui/material/Button';
 import RouteIcon from '@mui/icons-material/Route';
 import Stack from '@mui/material/Stack';
 import DirectionsIcon from '@mui/icons-material/Directions';
+import { FormControl, InputLabel, Input, FormHelperText } from '@mui/material';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
+
+function preventDefault(event) {}
 
 export default function DeliveryComponent({waypointData}) {
-  // const houseNumber = waypoint.delivery.houseNumber
-  // const streetPrefix = waypoint.delivery.streetPrefix
-  
+ 
   return (
     <React.Fragment>
     <h1>Unassigned Deliveries</h1>
@@ -26,8 +24,14 @@ export default function DeliveryComponent({waypointData}) {
       <Button variant="contained" endIcon={<DirectionsIcon />}>
         Generate Routes
       </Button>
-    </Stack>
-    <Box sx={{width: '100%', mb: 2, overflowX: 'auto'}}>
+      </Stack>
+       <FormControl>
+        <InputLabel htmlFor="input-name">Customer Name</InputLabel>
+        <Input id="input-name" aria-describedby="my-helper-text" />
+        <FormHelperText id="my-helper-text">Seach by Name</FormHelperText>
+        <Button variant="outline">Search</Button> 
+</FormControl>
+<Box>
     <Table size="small">
       <TableHead>
         <TableRow>

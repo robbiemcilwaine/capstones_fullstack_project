@@ -27,7 +27,7 @@ export default function DeliveryComponent({waypointData}) {
         Generate Routes
       </Button>
     </Stack>
-    <Box sx={{width: '100%', mb: 2, overflowX: 'auto'}}>
+    <Box sx={{ margin: '20px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
     <Table size="small">
       <TableHead>
         <TableRow>

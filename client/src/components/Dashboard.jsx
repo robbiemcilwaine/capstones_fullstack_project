@@ -16,27 +16,26 @@ function preventDefault(event) {
 export default function Dashboard({deliveryData}) {
   return (
     <React.Fragment>
-      <h1>Deliveries</h1>
       <div className='data-table'>
-      <Box sx={{width: '100%', mb: 2, overflowX: 'auto'}}>
+      <Box >
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell align="center">Route ID</TableCell>
-            <TableCell align="center">Postal District</TableCell>
-            <TableCell align="center">Driver Assigned</TableCell>
-            <TableCell align="center">No. of Deliveries</TableCell>
-            <TableCell align="center">Delivery Status</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.15rem', paddingLeft: '50px', paddingRight: '50px' }}>Route ID</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.15rem', paddingLeft: '50px', paddingRight: '50px' }}>Postal District</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.15rem', paddingLeft: '50px', paddingRight: '50px' }}>Driver Assigned</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.15rem', paddingLeft: '50px', paddingRight: '50px' }}>No. of Deliveries</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.15rem', paddingLeft: '50px', paddingRight: '50px' }}>Delivery Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {deliveryData.map((delivery,index) => (
             <TableRow key={index}>
-              <TableCell align="center">{`${delivery.route}`}</TableCell>  
-              <TableCell align="center">{`${delivery.postalDistrict}`}</TableCell>
-              <TableCell align="center">{`${delivery.driverAssigned}`}</TableCell>
-              <TableCell align="center">{`${delivery.numberOfDeliveries}`}</TableCell>
-              <TableCell align="center">{`${delivery.deliveryStatus}`}</TableCell>
+              <TableCell align="center" sx={{ fontSize: '1.125rem' }}>{`${delivery.route}`}</TableCell>  
+              <TableCell align="center" sx={{ fontSize: '1.125rem' }}>{`${delivery.postalDistrict}`}</TableCell>
+              <TableCell align="center" sx={{ fontSize: '1.125rem' }}>{`${delivery.driverAssigned}`}</TableCell>
+              <TableCell align="center" sx={{ fontSize: '1.125rem' }}>{`${delivery.numberOfDeliveries}`}</TableCell>
+              <TableCell align="center" sx={{ fontSize: '1.125rem' }}>{`${delivery.deliveryStatus}`}</TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -11,7 +11,7 @@ const HomeContainer = ({deliveryData}) => {
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4, display: 'flex',  justifyContent: "center"}}>
                 <Grid container spacing={3} justifyContent='center'>
                     <Grid item xs={12}>
-                        <Paper sx={{p: 10, display: 'flex', flexDirection: 'column', backgroundColor: 'orange'}}>
+                        <Paper sx={{p: 10, display: 'flex', flexDirection: 'column', maxWidth: '1200px', margin: '0 auto'}}>
                             <Dashboard deliveryData={deliveryData}/>
                         </Paper>
                     </Grid>

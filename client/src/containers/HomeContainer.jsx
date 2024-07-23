@@ -15,6 +15,15 @@ const HomeContainer = ({deliveryData}) => {
                     </Grid>
                 </Grid>
             </Container>
+            <footer>
+                <ul>
+                    <li>Contact us: +44 (0) 330 1232288</li>
+                    <li>RainforestRetail &copy;</li>
+                </ul>
+                <ul>
+                    <li>Address: 123 Main Street, London, SW1</li>
+                </ul>
+            </footer>
         </>
     );
 }

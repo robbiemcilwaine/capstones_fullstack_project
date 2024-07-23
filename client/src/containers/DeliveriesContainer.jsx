@@ -11,7 +11,7 @@ const DeliveriesContainer = () => {
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
                         <Paper sx={{ p: 10, display: 'flex', flexDirection: 'column', width: '100%'}}>
-                        <DeliveryComponent />
+                        <DeliveryComponent/>
                         </Paper>
                     </Grid>
                 </Grid>

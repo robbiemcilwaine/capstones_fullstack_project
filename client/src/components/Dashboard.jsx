@@ -12,19 +12,11 @@ function createData(id, routeId, postalDistrict, driverAssigned, numberOfDeliver
   return {id, routeId, postalDistrict, driverAssigned, numberOfDeliveries, deliveryStatus };
 }
 
-const rows = [
-  createData(0, 'HD1-XX', 'HD1', false, 10, 'UNDELIVERED'),
-  createData(1, 'HD2-XX', 'HD2', true, 12, 'UNDELIVERED'),
-  createData(2, 'HD3-XX', 'HD3', true, 15, 'DELIVERED'),
-  createData(3, 'HD4-XX', 'HD4', true, 5, 'IN TRANSIT'),
-  createData(4, 'HD5-XX', 'HD5', true, 30, 'DELIVERED'),
-];
-
 function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function Dashboard() {
+export default function Dashboard({deliveryData}) {
   return (
     <React.Fragment>
       <h1>Deliveries</h1>
@@ -41,13 +33,13 @@ export default function Dashboard() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell align="center">{`${row.routeId}`}</TableCell>  
-              <TableCell align="center">{`${row.postalDistrict}`}</TableCell>
-              <TableCell align="center">{`${row.driverAssigned}`}</TableCell>
-              <TableCell align="center">{`${row.numberOfDeliveries}`}</TableCell>
-              <TableCell align="center">{`${row.deliveryStatus}`}</TableCell>
+          {deliveryData.map((delivery) => (
+            <TableRow key={deliveryData.id}>
+              <TableCell align="center">{`${delivery.id}`}</TableCell>  
+              <TableCell align="center">{`${delivery.postalDistrict}`}</TableCell>
+              <TableCell align="center">{`${delivery.driverAssigned}`}</TableCell>
+              <TableCell align="center">{`${delivery.numberOfDeliveries}`}</TableCell>
+              <TableCell align="center">{`${delivery.deliveryStatus}`}</TableCell>
             </TableRow>
           ))}
         </TableBody>

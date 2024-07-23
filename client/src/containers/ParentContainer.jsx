@@ -1,8 +1,8 @@
 import * as React from 'react';
 import NavigationComponent from '../components/NavigationComponent';
 import { RouterProvider, createBrowserRouter, Routes, Route } from 'react-router-dom';
-import HomeContainer from './HomeContainer';
-import DeliveriesContainer from './DeliveriesContainer';
+import DashboardContainer from './DashboardContainer';
+import UnassignedDeliveriesContainer from './UnassignedDeliveriesContainer';
 import OurMapContainer from './OurMapContainer';
 
 const ParentContainer = () => {
@@ -44,7 +44,7 @@ const ParentContainer = () => {
                 children: [
                     {
                         path: "/",
-                        element: <HomeContainer deliveryData={deliveryData}/>
+                        element: <DashboardContainer deliveryData={deliveryData}/>
                     },
                     {
                         path: "/map",
@@ -52,7 +52,7 @@ const ParentContainer = () => {
                     },
                     {
                         path: "/deliveries",
-                        element: <DeliveriesContainer waypointData={waypointData}/>
+                        element: <UnassignedDeliveriesContainer waypointData={waypointData}/>
                     }
                 ]
             },

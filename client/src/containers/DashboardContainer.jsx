@@ -1,10 +1,10 @@
-import Dashboard from "../components/Dashboard";
+import Dashboard from "../components/DashboardComponent";
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
 import { CenterFocusStrong } from "@mui/icons-material";
 
-const HomeContainer = ({deliveryData}) => {
+const DashboardContainer = ({deliveryData}) => {
     return (
         <>
         <h1>Current Deliveries</h1>
@@ -30,4 +30,4 @@ const HomeContainer = ({deliveryData}) => {
     );
 }
 
-export default HomeContainer;
+export default DashboardContainer;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
 
-export default function Dashboard({ deliveryData }) {
+export default function DashboardComponent({ deliveryData }) {
   return (
     <React.Fragment>
       <Box sx={{ margin: '20px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>

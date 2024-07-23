@@ -11,26 +11,14 @@ import RouteIcon from '@mui/icons-material/Route';
 import Stack from '@mui/material/Stack';
 import DirectionsIcon from '@mui/icons-material/Directions';
 
-// Generate Delivery Data
-function createData(id, name, address, deliveryId, routeId, deliveryStatus) {
-  return { id, name, address, deliveryId, routeId, deliveryStatus};
-}
-
-const rows = [
-  createData(0, 'Elvis Presley', '47 Market St, Paddock, Huddersfield HD1 4SH', 1, null, 'UNDELIVERED'),
-  createData(1, 'Tom Cruise', '467 Bradford Rd, Huddersfield HD2 2LL', 2, null, 'UNDELIVERED'),
-  createData(2, 'Benedict Cumberbatch', '75 Acre St, Lindley, Huddersfield HD3 3DZ', 3, null, 'UNDELIVERED'),
-  createData(3, 'Simon Cowell', '1 Robin Hood Hill, Berry Brow, Huddersfield HD4 7QP', 4, null, 'UNDELIVERED'),
-  createData(4, 'Channing Tatum', 'Unit 2, 169 Wakefield Rd, Moldgreen, Huddersfield HD5 9AN', 5, null, 'UNDELIVERED'),
-
-];
-
-
 function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function DeliveryComponent() {
+export default function DeliveryComponent({waypointData}) {
+  // const houseNumber = waypoint.delivery.houseNumber
+  // const streetPrefix = waypoint.delivery.streetPrefix
+  
   return (
     <React.Fragment>
     <h1>Unassigned Deliveries</h1>
@@ -51,13 +39,18 @@ export default function DeliveryComponent() {
         </TableRow>
       </TableHead>
       <TableBody>
-        {rows.map((row) => (
-          <TableRow key={row.id}>
-            <TableCell align="left">{`${row.name}`}</TableCell>
-            <TableCell align="left">{`${row.address}`}</TableCell>
-            <TableCell align="center">{`${row.deliveryId}`}</TableCell>
-            <TableCell align="center">{`${row.routeId}`}</TableCell>
-            <TableCell align="center">{`${row.deliveryStatus}`}</TableCell>
+        {waypointData.map((waypoint,index) => (
+          <TableRow key={index}>
+            <TableCell align="left">{`${waypoint.delivery.customerName}`}</TableCell>
+            <TableCell align="left">{`${waypoint.delivery.houseNumber},
+             ${waypoint.delivery.streetPrefix}
+              ${waypoint.delivery.streetSuffix},
+                ${waypoint.delivery.city},
+                 ${waypoint.delivery.postalDistrict}
+                  ${waypoint.delivery.outCode}`}</TableCell>
+            <TableCell align="center">{`${waypoint.delivery.id}`}</TableCell>
+            <TableCell align="center">{`${waypoint.route}`}</TableCell>
+            <TableCell align="center">{`${waypoint.delivery.deliveryStatus}`}</TableCell>
           </TableRow>
         ))}
       </TableBody>

@@ -7,10 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Box } from '@mui/material';
 
-// Generate Unassigned Delivery Data
-function createData(id, routeId, postalDistrict, driverAssigned, numberOfDeliveries, deliveryStatus) {
-  return {id, routeId, postalDistrict, driverAssigned, numberOfDeliveries, deliveryStatus };
-}
+
 
 function preventDefault(event) {
   event.preventDefault();
@@ -33,9 +30,9 @@ export default function Dashboard({deliveryData}) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {deliveryData.map((delivery) => (
-            <TableRow key={deliveryData.id}>
-              <TableCell align="center">{`${delivery.id}`}</TableCell>  
+          {deliveryData.map((delivery,index) => (
+            <TableRow key={index}>
+              <TableCell align="center">{`${delivery.route}`}</TableCell>  
               <TableCell align="center">{`${delivery.postalDistrict}`}</TableCell>
               <TableCell align="center">{`${delivery.driverAssigned}`}</TableCell>
               <TableCell align="center">{`${delivery.numberOfDeliveries}`}</TableCell>

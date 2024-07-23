@@ -9,7 +9,7 @@ const HomeContainer = () => {
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
-                        <Paper sx={{ p: 10, display: 'flex', flexDirection: 'column', width: '100%'}}>
+                        <Paper sx={{ p: 10, display: 'flex', flexDirection: 'column', width: '200%', backgroundColor: 'orange'}}>
                             <Dashboard />
                         </Paper>
                     </Grid>

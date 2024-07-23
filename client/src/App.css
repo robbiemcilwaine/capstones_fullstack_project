@@ -8,8 +8,14 @@
   padding: 2rem;
   text-align: center;
   background-color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
-body {
-  background-color: white;
+.data-table {
+  
+  display:inline; 
+  justify-content: center;
+  align-items: center;
 }

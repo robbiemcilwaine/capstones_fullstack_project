@@ -39,7 +39,7 @@ public class DeliveryService {
         String outCode = String.valueOf(delivery.getOutCode());
 
         double randomDouble = random.nextDouble();
-        if(randomDouble < 0.5){
+        if(randomDouble < 0.5){ //to vary which api key is used to not get go over the rate limit for a single key
             String baseUrl = String.format("https://geocode.search.hereapi.com/v1/geocode?q=%s+%s+%s%%2C+%s+%s+%s%%2C+England&apiKey=6s-l22M1ZHNGlYJixzQoa0rlSYy0YOVwTSAphbBJA0Q", houseNumber, streetPrefix, streetSuffix, city, postalDistrict, outCode );
             return baseUrl;
         }

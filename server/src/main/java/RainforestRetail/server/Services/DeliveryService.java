@@ -34,7 +34,7 @@ public class DeliveryService {
         String postalDistrict = delivery.getPostalDistrict();
         String outCode = String.valueOf(delivery.getOutCode());
 
-         String baseUrl = String.format("https://geocode.search.hereapi.com/v1/geocode?q=%s+%s+%s%%2C+%s+%s+%s%%2C+England&apiKey=6s-l22M1ZHNGlYJixzQoa0rlSYy0YOVwTSAphbBJA0Q", houseNumber, streetPrefix, streetSuffix, city, postalDistrict, outCode  );
+         String baseUrl = String.format("https://geocode.search.hereapi.com/v1/geocode?q=%s+%s+%s%%2C+%s+%s+%s%%2C+England&apiKey=peCDnfJ3TwcDG2OE9yTa4KCVXocsDJCRmOuEk2fuoCw", houseNumber, streetPrefix, streetSuffix, city, postalDistrict, outCode  );
          return baseUrl;
     }
 

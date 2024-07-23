@@ -28,8 +28,8 @@ export default function Dashboard() {
   return (
     <React.Fragment>
       <h1>Deliveries</h1>
-      <Box sx={{width: '100%', mb: 2}}>
-      <Table size="small" style={{ width: 1200 }}>
+      <Box sx={{width: '100%', mb: 2, overflowX: 'auto'}}>
+      <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell align="center">Route ID</TableCell>

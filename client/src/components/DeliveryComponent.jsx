@@ -10,15 +10,23 @@ import Button from '@mui/material/Button';
 import RouteIcon from '@mui/icons-material/Route';
 import Stack from '@mui/material/Stack';
 import DirectionsIcon from '@mui/icons-material/Directions';
+import { FormControl, InputLabel, Input, FormHelperText } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import EditIcon from '@mui/icons-material/Edit';
+import Divider from '@mui/material/Divider';
+import ArchiveIcon from '@mui/icons-material/Archive';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
+
+function preventDefault(event) {}
+
 
 export default function DeliveryComponent({waypointData}) {
-  // const houseNumber = waypoint.delivery.houseNumber
-  // const streetPrefix = waypoint.delivery.streetPrefix
-  
+ 
   return (
     <React.Fragment>
     <h1>Unassigned Deliveries</h1>
@@ -27,7 +35,7 @@ export default function DeliveryComponent({waypointData}) {
         Generate Routes
       </Button>
     </Stack>
-    <Box sx={{width: '100%', mb: 2, overflowX: 'auto'}}>
+<Box>
     <Table size="small">
       <TableHead>
         <TableRow>

@@ -28,6 +28,7 @@ export default function Dashboard() {
   return (
     <React.Fragment>
       <h1>Deliveries</h1>
+      <div className='data-table'>
       <Box sx={{width: '100%', mb: 2, overflowX: 'auto'}}>
       <Table size="small">
         <TableHead>
@@ -52,11 +53,7 @@ export default function Dashboard() {
         </TableBody>
       </Table>
       </Box>
-      <Box sx={{ textAlign: 'left' }}>
-        <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 2 }}>
-          See more orders
-        </Link>
-      </Box>
+      </div>
     </React.Fragment>
   );
 }

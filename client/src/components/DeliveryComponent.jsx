@@ -6,6 +6,10 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Box } from '@mui/material';
+import Button from '@mui/material/Button';
+import RouteIcon from '@mui/icons-material/Route';
+import Stack from '@mui/material/Stack';
+import DirectionsIcon from '@mui/icons-material/Directions';
 
 // Generate Delivery Data
 function createData(id, name, address, deliveryId, routeId, deliveryStatus) {
@@ -30,6 +34,11 @@ export default function DeliveryComponent() {
   return (
     <React.Fragment>
     <h1>Unassigned Deliveries</h1>
+    <Stack direction="row" spacing={2} padding={1} justifyContent={'center'}>
+      <Button variant="contained" endIcon={<DirectionsIcon />}>
+        Generate Routes
+      </Button>
+    </Stack>
     <Box sx={{width: '100%', mb: 2, overflowX: 'auto'}}>
     <Table size="small">
       <TableHead>
@@ -53,11 +62,6 @@ export default function DeliveryComponent() {
         ))}
       </TableBody>
     </Table>
-    </Box>
-    <Box sx={{ textAlign: 'left' }}>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 2 }}>
-        See more orders
-      </Link>
     </Box>
   </React.Fragment>
   );

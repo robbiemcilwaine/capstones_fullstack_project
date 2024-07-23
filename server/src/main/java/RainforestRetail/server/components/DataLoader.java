@@ -75,6 +75,42 @@ public class DataLoader implements ApplicationRunner {
         deliveryRepository.save(delivery9);
         waypointService.saveWaypoint(delivery9);
 
+        Delivery delivery10 = new Delivery("A","4","Oastler","Ave","Huddersfield","HD1","4EU",false,DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery10);
+        waypointService.saveWaypoint(delivery10);
+
+        Delivery delivery11 = new Delivery("B","42","Grasscroft","Rd","Huddersfield","HD1","4LP",false,DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery11);
+        waypointService.saveWaypoint(delivery11);
+
+        Delivery delivery12 = new Delivery("C","152","Ashbrow","Rd","Huddersfield","HD2","1DU",false, DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery12);
+        waypointService.saveWaypoint(delivery12);
+
+        Delivery delivery13 = new Delivery("D","11", "Round Ings", "Rd", "Huddersfield", "HD3", "3FQ",false,DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery13);
+        waypointService.saveWaypoint(delivery13);
+
+        Delivery delivery14 = new Delivery("E","27", "Delph", "Ln", "Huddersfield","HD4", "7JA",false,DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery14);
+        waypointService.saveWaypoint(delivery14);
+
+        Delivery delivery15 = new Delivery("F","42", "Greenside", "Ave", "Huddersfield", "HD5", "8QQ",false,DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery15);
+        waypointService.saveWaypoint(delivery15);
+
+        Delivery delivery16 = new Delivery("G","49", "Netherend", "Rd", "Huddersfield", "HD7", "5EA",false,DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery16);
+        waypointService.saveWaypoint(delivery16);
+
+        Delivery delivery17 = new Delivery("H","49", "Victoria", "St", "Huddersfield", "HD8", "9NW",false, DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery17);
+        waypointService.saveWaypoint(delivery17);
+
+        Delivery delivery18 = new Delivery("I","7", "Town End", "Cres", "Huddersfield", "HD9", "1QR",false,DeliveryStatus.UNDELIVERED);
+        deliveryRepository.save(delivery18);
+        waypointService.saveWaypoint(delivery18);
+
 
 
 

@@ -5,9 +5,28 @@ import HomeContainer from './HomeContainer';
 import DeliveriesContainer from './DeliveriesContainer';
 import OurMapContainer from './OurMapContainer';
 
-
-
 const ParentContainer = () => {
+
+    const [deliveryData, setDeliveryData] = React.useState([]);
+    const [waypointData, setWaypointData] = React.useState([]);
+    const [routeData, setRouteData] = React.useState([]);
+
+    const fetchAllDeliveries = async () => {
+        const response = await fetch("http://localhost:8080/deliveries");
+        const deliveryData = await response.json();
+        setDeliveryData(deliveryData);
+    }
+
+    const fetchAllWaypoints = async () => {
+        const response = await fetch("http://localhost:8080/waypoints");
+        const waypointData = await response.json();
+        setWaypointData(waypointData);
+    }
+
+    React.useEffect(() => {
+        fetchAllDeliveries();
+        fetchAllWaypoints();
+    }, [])
 
     const router = createBrowserRouter(
 

@@ -24,6 +24,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 function preventDefault(event) {}
 
+
 export default function DeliveryComponent({waypointData}) {
 
   const StyledMenu = styled((props) => (
@@ -67,7 +68,7 @@ export default function DeliveryComponent({waypointData}) {
     },
   }));
   
- function CustomizedMenus() {
+  function CustomizedMenus() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -75,8 +76,8 @@ export default function DeliveryComponent({waypointData}) {
     };
     const handleClose = () => {
       setAnchorEl(null);
-    };
-  
+    }
+  }
  
   return (
     <React.Fragment>
@@ -85,56 +86,13 @@ export default function DeliveryComponent({waypointData}) {
       <Button variant="contained" endIcon={<DirectionsIcon />}>
         Generate Routes
       </Button>
-      </Stack>
-       <FormControl>
-        <InputLabel htmlFor="input-name">Customer Name</InputLabel>
-        <Input id="input-name" aria-describedby="my-helper-text" />
-        <FormHelperText id="my-helper-text">Seach by Name</FormHelperText>
-        <Button variant="outline">Search</Button> 
-</FormControl>
-
-<div>
-      <Button
-        id="demo-customized-button"
-        aria-controls={open ? 'demo-customized-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        variant="contained"
-        disableElevation
-        onClick={handleClick}
-        endIcon={<KeyboardArrowDownIcon />}
-      >
-        Options
-      </Button>
-      <StyledMenu
-        id="demo-customized-menu"
-        MenuListProps={{
-          'aria-labelledby': 'demo-customized-button',
-        }}
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-      >
-        <MenuItem onClick={handleClose} disableRipple>
-          <EditIcon />
-          Edit
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <FileCopyIcon />
-          Duplicate
-        </MenuItem>
-        <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
-          <ArchiveIcon />
-          Archive
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          <MoreHorizIcon />
-          More
-        </MenuItem>
-      </StyledMenu>
-    </div>
-
+    </Stack>
+    <FormControl>
+      <InputLabel htmlFor="input-name">Customer Name</InputLabel>
+      <Input id="input-name" aria-describedby="my-helper-text" />
+      <FormHelperText id="my-helper-text">Seach by Name</FormHelperText>
+      <Button variant="outline">Search</Button> 
+    </FormControl>  
 <Box>
     <Table size="small">
       <TableHead>
@@ -166,5 +124,4 @@ export default function DeliveryComponent({waypointData}) {
     </Box>
   </React.Fragment>
   );
-}
 }

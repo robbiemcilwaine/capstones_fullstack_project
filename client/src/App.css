@@ -39,6 +39,7 @@ footer ul li {
 
 
 .leaflet-routing-alt {
-  z-index: 10;
+  /* z-index: 10; */
   position: absolute;
+  background-color: grey;
 }

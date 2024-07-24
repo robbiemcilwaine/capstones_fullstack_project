@@ -95,7 +95,9 @@ const ParentContainer = () => {
                     },
                     {
                         path: "/deliveries",
+
                         element: <DeliveriesContainer allWayPointData ={allWayPointData}/>
+
                     }
                 ]
             },

@@ -3,7 +3,9 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
 
-const UnassignedDeliveriesContainer = ({allWayPointData}) => {
+
+const DeliveriesContainer = ({allWayPointData}) => {
+
 
     return (
         <>
@@ -11,7 +13,11 @@ const UnassignedDeliveriesContainer = ({allWayPointData}) => {
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
                         <Paper sx={{ p: 10, display: 'flex', flexDirection: 'column', width: '100%'}}>
+
+
+
                         <DeliveryComponent allWayPointData = {allWayPointData}/>
+
                         </Paper>
                     </Grid>
                 </Grid>
@@ -21,4 +27,6 @@ const UnassignedDeliveriesContainer = ({allWayPointData}) => {
     
 }
 
-export default UnassignedDeliveriesContainer;
+
+export default DeliveriesContainer;
+

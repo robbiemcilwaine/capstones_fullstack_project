@@ -25,7 +25,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 function preventDefault(event) {}
 
 
-export default function DeliveryComponent({waypointData}) {
+export default function DeliveryComponent({allWayPointData}) {
  
   return (
     <React.Fragment>
@@ -46,7 +46,7 @@ export default function DeliveryComponent({waypointData}) {
         </TableRow>
       </TableHead>
       <TableBody>
-        {waypointData.map((waypoint,index) => (
+        {allWayPointData.map((waypoint,index) => (
           <TableRow key={index}>
             <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.customerName}`}</TableCell>
             <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.houseNumber},

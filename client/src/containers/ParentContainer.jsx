@@ -10,9 +10,11 @@ const ParentContainer = () => {
     const [deliveryData, setDeliveryData] = React.useState([]);
     const [waypointData, setWaypointData] = React.useState([]);
     const [postalDistrict, setPostalDistrict] = React.useState('HD1');
+    const [allWayPointData, setAllWayPointData] = React.useState([]);
+  
 
    
-    const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState(null);
+    const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState({});
 
 
     const fetchAllDeliveries = async () => {
@@ -21,6 +23,13 @@ const ParentContainer = () => {
         setDeliveryData(deliveryData);
     }
 
+    const fetchAllWaypoints = async () => {
+        const response = await fetch("http://localhost:8080/waypoints");
+        const allWayPointData = await response.json();
+        setAllWayPointData(allWayPointData);
+    }
+
+ 
     const fetchWaypointByPostalDistrict = async (postalDistrict) => {
         const response = await fetch(`http://localhost:8080/deliveries/postalDistrict/${postalDistrict}`);
         const deliveryData = await response.json();
@@ -38,6 +47,7 @@ const ParentContainer = () => {
 
     React.useEffect(() => {
         fetchAllDeliveries();
+        fetchAllWaypoints();
     },[])
 
     const fetchDeliveryByPostalDistrict = async (postalDistrict) => {
@@ -77,7 +87,7 @@ const ParentContainer = () => {
                 children: [
                     {
                         path: "/",
-                        element: <DashboardContainer deliveryData={deliveryData}/>
+                        element: <DashboardContainer deliveryByPostalDistrict={deliveryByPostalDistrict}/>
                     },
                     {
                         path: "/map",
@@ -85,7 +95,9 @@ const ParentContainer = () => {
                     },
                     {
                         path: "/deliveries",
-                        element: <DeliveriesContainer waypointData={waypointData}/>
+
+                        element: <DeliveriesContainer allWayPointData ={allWayPointData}/>
+
                     }
                 ]
             },

@@ -11,10 +11,14 @@ const ParentContainer = () => {
     const [waypointData, setWaypointData] = React.useState([]);
     const [postalDistrict, setPostalDistrict] = React.useState('HD1');
     const [allWayPointData, setAllWayPointData] = React.useState([]);
-  
-
-   
+    const [routeData, setRouteData] = React.useState({});   
     const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState({});
+
+    const fetchRouteData= async () => {
+        const response = await fetch("http://localhost:8080/routes");
+        const routeData = await response.json();
+        setRouteData(routeData);
+    }
 
 
     const fetchAllDeliveries = async () => {
@@ -48,6 +52,7 @@ const ParentContainer = () => {
     React.useEffect(() => {
         fetchAllDeliveries();
         fetchAllWaypoints();
+        fetchRouteData();
     },[])
 
     const fetchDeliveryByPostalDistrict = async (postalDistrict) => {
@@ -87,7 +92,7 @@ const ParentContainer = () => {
                 children: [
                     {
                         path: "/",
-                        element: <DashboardContainer deliveryByPostalDistrict={deliveryByPostalDistrict}/>
+                        element: <DashboardContainer deliveryByPostalDistrict={deliveryByPostalDistrict} routeData = {routeData} />
                     },
                     {
                         path: "/map",

@@ -38,12 +38,8 @@ footer ul li {
 }
 
 
-.leaflet-routing-alt {
-  z-index: 10;
-  position: relative;
-  background-color: transparent;
-  border: transparent;
-  color: blue;
+.leaflet-routing-container {
+  opacity: 0;
 }
 
 .route-filter-select {
@@ -59,4 +55,18 @@ footer ul li {
   font-size: 16px;
   padding: 5px;
   background-color: rgb(0, 26, 255);
+}
+
+.route-info {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+  text-overflow: ellipsis;
+  position: absolute;
+  top: 10px;
+  left: 950px;
+  width: 200px;
+  height: 100px;
 }

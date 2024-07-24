@@ -56,9 +56,9 @@ const Map = ({waypoints}) => {
                 transformOrigin: 'center'
             }}
         ></div>
-        <div className=''>
-          <p>Total Distance: {routeInfo.distance} km</p>
-          <p>Total Time: {routeInfo.time} minutes</p>
+        <div className='route-info'>
+          <p>Total Distance: <br />{routeInfo.distance} km</p>
+          <p>Total Time: <br />{routeInfo.time} minutes</p>
       </div>
     </div>
 );

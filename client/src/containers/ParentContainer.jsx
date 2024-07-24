@@ -17,13 +17,13 @@ const ParentContainer = () => {
         setDeliveryData(deliveryData);
     }
 
-    const fetchAllWaypoints = async () => {
-        const response = await fetch("http://localhost:8080/waypoints");
-        const waypointData = await response.json();
-        setWaypointData(waypointData);
-    }
+    // const fetchAllWaypoints = async () => {
+    //     const response = await fetch("http://localhost:8080/waypoints");
+    //     const waypointData = await response.json();
+    //     setWaypointData(waypointData);
+    // }
 
-    const fetchDeliveryByPostalDistrict = async (postalDistrict) => {
+    const fetchWaypointByPostalDistrict = async (postalDistrict) => {
         const response = await fetch(`http://localhost:8080/deliveries/postalDistrict/${postalDistrict}`);
         const deliveryData = await response.json();
         const waypoints = deliveryData.map(delivery => ({
@@ -34,12 +34,11 @@ const ParentContainer = () => {
     }
 
     React.useEffect(() => {
-        fetchDeliveryByPostalDistrict(postalDistrict); 
+        fetchWaypointByPostalDistrict(postalDistrict); 
     }, [postalDistrict])
 
     React.useEffect(() => {
         fetchAllDeliveries();
-        fetchAllWaypoints();
     },[])
 
     const router = createBrowserRouter(

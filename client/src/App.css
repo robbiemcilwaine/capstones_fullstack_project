@@ -1,5 +1,5 @@
 #map {
-  height: 600px;
+  height: 700px;
   width: 700px;
 }
 
@@ -45,10 +45,13 @@ footer ul li {
 }
 
 .route-filter-select {
-  position: relative;
-   top: 1px;
-   right: 700px;
-   z-index: 1000; /* Ensure it's on top of the map */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2px;
+  position:relative;
+   top: 5%;
+   right: 50%;
+   z-index: 100; /* Ensure it's on top of the map */
   }
 
 .big-select {

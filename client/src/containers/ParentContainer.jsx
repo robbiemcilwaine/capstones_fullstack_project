@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter, Routes, Route } from 'react-router
 import DashboardContainer from './DashboardContainer' 
 import DeliveriesContainer from './DeliveriesContainer';
 import OurMapContainer from './OurMapContainer';
+import ResponsiveLayout from '../components/ResponsiveLayout';
 
 const ParentContainer = () => {
 
@@ -109,7 +110,9 @@ const ParentContainer = () => {
     return (
         <>
         <main>
-            <RouterProvider router={router}/>
+            <ResponsiveLayout>
+                <RouterProvider router={router}/>
+            </ResponsiveLayout>
         </main>
         </>
     )

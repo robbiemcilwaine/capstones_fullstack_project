@@ -40,11 +40,12 @@ const Map = ({waypoints}) => {
             id='map'
             style={{
                 margin: '10vh 0 ' ,
-                transform: 'scale(1.5)',
+                transform: 'scale(1)',
                 transformOrigin: 'center'
             }}
         ></div>
     </div>
+    
 );
 }
 

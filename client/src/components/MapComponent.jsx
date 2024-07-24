@@ -8,7 +8,7 @@ const Map = ({waypoints}) => {
   const center = [53.6458, -1.7850]; // map center
 
   useEffect(() => {
-    const map = L.map('map').setView(center, 13);
+    const map = L.map('map').setView(center, 12);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -35,8 +35,17 @@ const Map = ({waypoints}) => {
   }, [waypoints]);
 
   return (
-    <div id='map'></div>
-  );
+    <div style={{position: 'relative' }}>
+        <div
+            id='map'
+            style={{
+                margin: '10vh 0 ' ,
+                transform: 'scale(1.5)',
+                transformOrigin: 'center'
+            }}
+        ></div>
+    </div>
+);
 }
 
 export default Map;

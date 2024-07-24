@@ -43,3 +43,18 @@ footer ul li {
   position: absolute;
   background-color: grey;
 }
+
+.route-filter-select {
+  position: relative;
+   top: 1px;
+   right: 700px;
+   z-index: 1000; /* Ensure it's on top of the map */
+  }
+
+.big-select {
+  width: 200px;
+  height: 70px;
+  font-size: 16px;
+  padding: 5px;
+  background-color: rgb(0, 26, 255);
+}

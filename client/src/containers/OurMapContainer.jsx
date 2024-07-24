@@ -10,25 +10,24 @@ const OurMapContainer = ({waypointData, setPostalDistrict}) => {
     setPostalDistrict(district);
   };
 
-    return (
-        <>
-            <div>
-      <select value={selectedDistrict} onChange={handleDistrictChange}>
-        <option value="HD1">HD1</option>
-        <option value="HD2">HD2</option>
-        <option value="HD3">HD3</option>
-        <option value="HD4">HD4</option>
-        <option value="HD5">HD5</option>
-        <option value="HD6">HD6</option>
-        <option value="HD7">HD7</option>
-        <option value="HD8">HD8</option>
-        <option value="HD9">HD9</option>
-        {/* Add more options as needed */}
-      </select>
-      <MapComponent waypoints={waypointData} />
-    </div>
-        </>
-    )
+  return (
+    <>
+        <div className='route-filter-select'>
+            <select className="big-select" value={selectedDistrict} onChange={handleDistrictChange}>
+                <option value="HD1">HD1</option>
+                <option value="HD2">HD2</option>
+                <option value="HD3">HD3</option>
+                <option value="HD4">HD4</option>
+                <option value="HD5">HD5</option>
+                <option value="HD6">HD6</option>
+                <option value="HD7">HD7</option>
+                <option value="HD8">HD8</option>
+                <option value="HD9">HD9</option>
+            </select>
+        </div>
+            <MapComponent waypoints={waypointData} />
+    </>
+);
 }
 
 export default OurMapContainer;

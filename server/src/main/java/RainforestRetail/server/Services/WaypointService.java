@@ -5,6 +5,7 @@ import RainforestRetail.server.models.*;
 
 import RainforestRetail.server.repositories.DeliveryRepository;
 import RainforestRetail.server.repositories.WaypointRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -29,7 +30,7 @@ public class WaypointService {
     @Autowired
     DeliveryService deliveryService;
 
-
+    @Transactional
     public Waypoint saveWaypoint(Delivery delivery) {
         GeocodeResponse response = deliveryService.getGeocodeObject(delivery);
         GeocodeResponse.Item item = response.getItems().get(0);

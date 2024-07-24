@@ -30,6 +30,7 @@ public class RouteController {
 
     @GetMapping
     public ResponseEntity<List<Route>> getAllRoutes(){
+        routeService.reverseRoutesWaypointList();
         List<Route> allRoutes = routeRepository.findAll();
         return new ResponseEntity<>(allRoutes, HttpStatus.OK);
 

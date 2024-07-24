@@ -41,6 +41,7 @@ public class DataLoader implements ApplicationRunner {
 //        Delivery delivery = new Delivery("Aaron", "119", "Orchard", "Way", "London", "CR0" , null, false, DeliveryStatus.UNDELIVERED);
 
 
+
         Delivery delivery1 = new Delivery("Charisma", "11", "Woodhouse","Avenue", "Huddersfield","HD2", "1BP",DeliveryStatus.UNDELIVERED);
         deliveryRepository.save(delivery1);
         waypointService.saveWaypoint(delivery1);
@@ -114,6 +115,11 @@ public class DataLoader implements ApplicationRunner {
         Delivery delivery18 = new Delivery("Ian","7", "Town End", "Cres", "Huddersfield", "HD9", "1QR",DeliveryStatus.UNDELIVERED);
         deliveryRepository.save(delivery18);
         waypointService.saveWaypoint(delivery18);
+
+//        Delivery theHub = new Delivery("Hub","Unit A","Albert","Street","Huddersfield","HD1","3RE", DeliveryStatus.UNDELIVERED);
+//        deliveryRepository.save(theHub);
+        Delivery theHub = new Delivery("Hub","Unit A","Albert","Street","Huddersfield","HD1","3RE", DeliveryStatus.UNDELIVERED);
+        waypointService.saveWaypoint(theHub);
 
 
 

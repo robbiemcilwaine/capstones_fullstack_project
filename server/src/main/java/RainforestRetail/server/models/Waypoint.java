@@ -3,6 +3,9 @@ package RainforestRetail.server.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "waypoints")
 public class Waypoint {
@@ -18,9 +21,9 @@ public class Waypoint {
     @Column
     private double longitude;
 
-    @ManyToOne
-    @JoinColumn(name = "route_id")
-    private Route route;
+    @ManyToMany(mappedBy = "listOfWaypoints")
+    @JsonIgnoreProperties({"listOfWaypoints"})
+    private List<Route> route;
 
     @OneToOne
     @JsonIgnoreProperties({"waypoint"})
@@ -30,7 +33,7 @@ public class Waypoint {
         this.latitude = latitude;
         this.longitude = longitude;
         this.delivery = delivery;
-        this.route = null;
+        this.route = new ArrayList<>();
     }
 
     public Waypoint() {
@@ -60,12 +63,11 @@ public class Waypoint {
         this.longitude = longitude;
     }
 
-    public Route getRoute() {
+    public List<Route> getRoute() {
         return route;
     }
 
-    public void setRoute(Route route) {
-        System.out.println("is waypoint setting route>");
+    public void setRoute(List<Route> route) {
         this.route = route;
     }
 

@@ -32,7 +32,7 @@ const Map = ({waypoints}) => {
   }
 
     return () => map.remove();
-  }, [center, waypoints]);
+  }, [waypoints]);
 
   return (
     <div id='map'></div>

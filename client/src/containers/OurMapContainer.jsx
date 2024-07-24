@@ -2,7 +2,7 @@ import MapComponent from '../components/MapComponent';
 import { useState } from 'react';
 
 const OurMapContainer = ({waypointData, setPostalDistrict}) => {
-    const [selectedDistrict, setSelectedDistrict] = useState('HD2');
+    const [selectedDistrict, setSelectedDistrict] = useState('HD1');
 
     const handleDistrictChange = (event) => {
     const district = event.target.value;

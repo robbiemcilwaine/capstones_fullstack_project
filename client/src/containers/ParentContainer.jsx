@@ -34,11 +34,13 @@ const ParentContainer = () => {
     }
 
     React.useEffect(() => {
+        fetchDeliveryByPostalDistrict(postalDistrict); 
+    }, [postalDistrict])
+
+    React.useEffect(() => {
         fetchAllDeliveries();
         fetchAllWaypoints();
-        fetchDeliveryByPostalDistrict(postalDistrict); 
-
-    }, [postalDistrict])
+    },[])
 
     const router = createBrowserRouter(
 

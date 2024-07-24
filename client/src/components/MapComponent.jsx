@@ -3,6 +3,8 @@ import "leaflet/dist/leaflet.css";
 import 'leaflet-routing-machine'; 
 import L from 'leaflet';
 import { useEffect } from 'react';
+import Button from '@mui/material/Button';
+import DirectionsIcon from '@mui/icons-material/Directions';
 
 const Map = () => {
 const center = [53.6458, -1.7850]; //map center
@@ -41,11 +43,12 @@ return()=> map.remove();
 
 return (
     <>
-      <div id = 'map'>
-
-
-
-      </div>
+      <div><Button variant="contained" endIcon={<DirectionsIcon />}>
+        Generate Routes
+      </Button></div>
+      <br>
+      </br>
+      <div id = 'map'></div>
     </>
 
 )

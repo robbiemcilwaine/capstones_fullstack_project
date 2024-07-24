@@ -31,9 +31,6 @@ export default function DeliveryComponent({waypointData}) {
     <React.Fragment>
     <h1>Unassigned Deliveries</h1>
     <Stack direction="row" spacing={2} padding={1} justifyContent={'center'}>
-      <Button variant="contained" endIcon={<DirectionsIcon />}>
-        Generate Routes
-      </Button>
     </Stack>
 
     <Box sx={{ margin: '20px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>

@@ -29,7 +29,7 @@ export default function DeliveryComponent({allWayPointData}) {
  
   return (
     <React.Fragment>
-    <h1>Unassigned Deliveries</h1>
+    <h1>Deliveries</h1>
     <Stack direction="row" spacing={2} padding={1} justifyContent={'center'}>
     </Stack>
 

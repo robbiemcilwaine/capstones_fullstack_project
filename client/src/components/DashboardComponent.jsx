@@ -7,7 +7,7 @@ export default function DashboardComponent({ deliveryByPostalDistrict }) {
     <React.Fragment>
       <Box sx={{ margin: '20px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
         <Typography variant="h4" align="center" gutterBottom>
-          Delivery Dashboard
+          Route Dashboard
         </Typography>
         <Table size="small">
           <TableHead>
@@ -15,7 +15,7 @@ export default function DashboardComponent({ deliveryByPostalDistrict }) {
               <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Route ID</TableCell>
               <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Driver Assigned</TableCell>
               <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>No. of Deliveries</TableCell>
-              <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Delivery Status</TableCell>
+              <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Route Status</TableCell>
             </TableRow>
           </TableHead>
           {/* <TableBody>

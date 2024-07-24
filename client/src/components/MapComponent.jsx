@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import "leaflet/dist/leaflet.css"; 
 import 'leaflet-routing-machine'; 
 import L from 'leaflet';
@@ -6,6 +6,13 @@ import { useEffect } from 'react';
 
 const Map = ({waypoints}) => {
   const center = [53.6458, -1.7850]; // map center
+  const map = useMap();
+
+  useEffect(() => {
+    const bounds = L.latLngBounds(waypoints);
+    if(waypoints && waypoints.length && waypoints.length > 0 ) map.fitBounds(bounds);
+
+  },[waypoints]);
 
   useEffect(() => {
     const map = L.map('map').setView(center, 12);
@@ -39,7 +46,7 @@ const Map = ({waypoints}) => {
         <div
             id='map'
             style={{
-              height: "calc(100vh - 20vh)",
+              
                 margin: '10vh 0 ' ,
                 transform: 'scale(1.5)',
                 transformOrigin: 'center'

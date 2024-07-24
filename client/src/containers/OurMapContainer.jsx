@@ -1,3 +1,4 @@
+import { MapContainer } from 'react-leaflet';
 import MapComponent from '../components/MapComponent';
 import { useState } from 'react';
 
@@ -12,8 +13,8 @@ const OurMapContainer = ({ waypointData, setPostalDistrict }) => {
 
     return (
         <>
-            <div className='route-filter-select'>
-                <select className="big-select" value={selectedDistrict} onChange={handleDistrictChange}>
+        <div className='route-filter-select'>
+        <select className="big-select" value={selectedDistrict} onChange={handleDistrictChange}>
                     <option value="HD1">HD1</option>
                     <option value="HD2">HD2</option>
                     <option value="HD3">HD3</option>
@@ -24,8 +25,14 @@ const OurMapContainer = ({ waypointData, setPostalDistrict }) => {
                     <option value="HD8">HD8</option>
                     <option value="HD9">HD9</option>
                 </select>
-            </div>
+                </div>
+                <MapContainer>
+            
+                
+         
                 <MapComponent waypoints={waypointData} />
+        </MapContainer>   
+        
         </>
     );
 }

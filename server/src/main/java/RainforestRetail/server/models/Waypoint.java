@@ -65,6 +65,7 @@ public class Waypoint {
     }
 
     public void setRoute(Route route) {
+        System.out.println("is waypoint setting route>");
         this.route = route;
     }
 

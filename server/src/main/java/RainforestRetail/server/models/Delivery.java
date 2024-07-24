@@ -55,11 +55,10 @@ public class Delivery {
     @JsonIgnoreProperties({"delivery"})
     private Waypoint waypoint;
 
-    public Delivery(String customerName, String houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, boolean driverAssigned, DeliveryStatus deliveryStatus) {
+    public Delivery(String customerName, String houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, DeliveryStatus deliveryStatus) {
         this.customerName = customerName;
 
         this.postalDistrict = postalDistrict;
-        this.driverAssigned = driverAssigned;
         this.deliveryStatus = deliveryStatus;
         this.waypoint = null;
         this.outCode = outCode;
@@ -94,14 +93,6 @@ public class Delivery {
 
     public void setPostalDistrict(String postalDistrict) {
         this.postalDistrict = postalDistrict;
-    }
-
-    public boolean isDriverAssigned() {
-        return driverAssigned;
-    }
-
-    public void setDriverAssigned(boolean driverAssigned) {
-        this.driverAssigned = driverAssigned;
     }
 
     public DeliveryStatus getDeliveryStatus() {

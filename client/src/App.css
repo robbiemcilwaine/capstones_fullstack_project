@@ -37,22 +37,8 @@ footer ul li {
   margin: 5px 0;
 }
 
-/* .leaflet-routing-container .leaflet-bar .leaflet-control {
-  position: relative;
-  margin-left: 100px;
-  margin: 100px 100px 100px 100px;
-} */
-
-.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
-  /* border: 2px solid rgba(0, 0, 0, 0.2); */
-  /* border: transparent !important; */
-}
 
 .leaflet-routing-alt {
   z-index: 10;
   position: absolute;
 }
-
-/* .css-yfo96e {
-  margin: 100px;
-} */

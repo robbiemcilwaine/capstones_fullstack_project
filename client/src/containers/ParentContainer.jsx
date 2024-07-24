@@ -10,7 +10,7 @@ const ParentContainer = () => {
     const [deliveryData, setDeliveryData] = React.useState([]);
     const [waypointData, setWaypointData] = React.useState([]);
     const [routeData, setRouteData] = React.useState([]);
-    const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState({});
+    const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState(null);
 
     const fetchAllDeliveries = async () => {
         const response = await fetch("http://localhost:8080/deliveries");
@@ -24,17 +24,35 @@ const ParentContainer = () => {
         setWaypointData(waypointData);
     }
 
-    // const fetchDeliveryByPostalDistrict = async (postalDistrict) => {
-    //     const response = await fetch(`http://localhost:8080/deliveries/postalDistrict/${postalDistrict}`);
-    //     const deliveryData = await response.json();
-    //     setDeliveryByPostalDistrict(prevData => ({ ...prevData, ...deliveryData}));
-    // }
+    const fetchDeliveryByPostalDistrict = async (postalDistrict) => {
+        const response = await fetch(`http://localhost:8080/deliveries/postalDistrict/${postalDistrict}`);
+        console.log("this is the response",response);
+        const deliveryDataByPostcode = await response.json();
+        console.log("this is delivery data",deliveryDataByPostcode)
+        setDeliveryByPostalDistrict(
+            (prevState) => ({
+                ...prevState,
+                [postalDistrict]: [deliveryDataByPostcode]}
+        ));
+    }
 
     React.useEffect(() => {
         fetchAllDeliveries();
         fetchAllWaypoints();
+        fetchDeliveryByPostalDistrict("HD1")
+        fetchDeliveryByPostalDistrict("HD2")
+        fetchDeliveryByPostalDistrict("HD3")
+        fetchDeliveryByPostalDistrict("HD4")
+        fetchDeliveryByPostalDistrict("HD5")
+        fetchDeliveryByPostalDistrict("HD6")
+        fetchDeliveryByPostalDistrict("HD7")
+        fetchDeliveryByPostalDistrict("HD8")
+        fetchDeliveryByPostalDistrict("HD9")
     }, [])
 
+    console.log("this is all deleviers in a key - valuepair", deliveryByPostalDistrict)
+
+   
     const router = createBrowserRouter(
 
         [

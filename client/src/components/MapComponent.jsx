@@ -37,7 +37,9 @@ const Map = ({waypoints}) => {
       const distanceKm = summary.totalDistance / 1000;
       const timeMinutes = Math.round(summary.totalTime % 3600 / 60);
       
-      setRouteInfo({ distance: distanceKm, time: timeMinutes });
+      setRouteInfo({ 
+        distance: distanceKm, 
+        time: timeMinutes });
     });
   }
 
@@ -54,7 +56,7 @@ const Map = ({waypoints}) => {
                 transformOrigin: 'center'
             }}
         ></div>
-        <div>
+        <div className=''>
           <p>Total Distance: {routeInfo.distance} km</p>
           <p>Total Time: {routeInfo.time} minutes</p>
       </div>

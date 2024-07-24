@@ -9,8 +9,7 @@ const ParentContainer = () => {
 
     const [deliveryData, setDeliveryData] = React.useState([]);
     const [waypointData, setWaypointData] = React.useState([]);
-    const [routeData, setRouteData] = React.useState([]);
-    const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState({});
+    const [postalDistrict, setPostalDistrict] = React.useState('HD1');
 
     const fetchAllDeliveries = async () => {
         const response = await fetch("http://localhost:8080/deliveries");
@@ -24,16 +23,22 @@ const ParentContainer = () => {
         setWaypointData(waypointData);
     }
 
-    // const fetchDeliveryByPostalDistrict = async (postalDistrict) => {
-    //     const response = await fetch(`http://localhost:8080/deliveries/postalDistrict/${postalDistrict}`);
-    //     const deliveryData = await response.json();
-    //     setDeliveryByPostalDistrict(prevData => ({ ...prevData, ...deliveryData}));
-    // }
+    const fetchDeliveryByPostalDistrict = async (postalDistrict) => {
+        const response = await fetch(`http://localhost:8080/deliveries/postalDistrict/${postalDistrict}`);
+        const deliveryData = await response.json();
+        const waypoints = deliveryData.map(delivery => ({
+            lat: delivery.waypoint.latitude,
+            lng: delivery.waypoint.longitude
+        }));
+        setWaypointData(waypoints);
+    }
 
     React.useEffect(() => {
         fetchAllDeliveries();
         fetchAllWaypoints();
-    }, [])
+        fetchDeliveryByPostalDistrict(postalDistrict); 
+
+    }, [postalDistrict])
 
     const router = createBrowserRouter(
 
@@ -48,7 +53,7 @@ const ParentContainer = () => {
                     },
                     {
                         path: "/map",
-                        element: <OurMapContainer/>
+                        element: <OurMapContainer waypointData={waypointData} setPostalDistrict ={setPostalDistrict}/>
                     },
                     {
                         path: "/deliveries",

@@ -9,8 +9,11 @@ const ParentContainer = () => {
 
     const [deliveryData, setDeliveryData] = React.useState([]);
     const [waypointData, setWaypointData] = React.useState([]);
-    const [routeData, setRouteData] = React.useState([]);
+    const [postalDistrict, setPostalDistrict] = React.useState('HD1');
+
+   
     const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState(null);
+
 
     const fetchAllDeliveries = async () => {
         const response = await fetch("http://localhost:8080/deliveries");
@@ -18,11 +21,24 @@ const ParentContainer = () => {
         setDeliveryData(deliveryData);
     }
 
-    const fetchAllWaypoints = async () => {
-        const response = await fetch("http://localhost:8080/waypoints");
-        const waypointData = await response.json();
-        setWaypointData(waypointData);
+    const fetchWaypointByPostalDistrict = async (postalDistrict) => {
+        const response = await fetch(`http://localhost:8080/deliveries/postalDistrict/${postalDistrict}`);
+        const deliveryData = await response.json();
+        const waypoints = deliveryData.map(delivery => ({
+            lat: delivery.waypoint.latitude,
+            lng: delivery.waypoint.longitude
+        }));
+        setWaypointData(waypoints);
     }
+
+
+    React.useEffect(() => {
+        fetchWaypointByPostalDistrict(postalDistrict); 
+    }, [postalDistrict])
+
+    React.useEffect(() => {
+        fetchAllDeliveries();
+    },[])
 
     const fetchDeliveryByPostalDistrict = async (postalDistrict) => {
         const response = await fetch(`http://localhost:8080/deliveries/postalDistrict/${postalDistrict}`);
@@ -37,8 +53,6 @@ const ParentContainer = () => {
     }
 
     React.useEffect(() => {
-        fetchAllDeliveries();
-        fetchAllWaypoints();
         fetchDeliveryByPostalDistrict("HD1")
         fetchDeliveryByPostalDistrict("HD2")
         fetchDeliveryByPostalDistrict("HD3")
@@ -49,6 +63,7 @@ const ParentContainer = () => {
         fetchDeliveryByPostalDistrict("HD8")
         fetchDeliveryByPostalDistrict("HD9")
     }, [])
+
 
     console.log("this is all deleviers in a key - valuepair", deliveryByPostalDistrict)
 
@@ -66,7 +81,7 @@ const ParentContainer = () => {
                     },
                     {
                         path: "/map",
-                        element: <OurMapContainer/>
+                        element: <OurMapContainer waypointData={waypointData} setPostalDistrict ={setPostalDistrict}/>
                     },
                     {
                         path: "/deliveries",

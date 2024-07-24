@@ -39,9 +39,11 @@ footer ul li {
 
 
 .leaflet-routing-alt {
-  /* z-index: 10; */
-  position: absolute;
-  background-color: grey;
+  z-index: 10;
+  position: relative;
+  background-color: transparent;
+  border: transparent;
+  color: blue;
 }
 
 .route-filter-select {

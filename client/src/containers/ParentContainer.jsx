@@ -2,7 +2,7 @@ import * as React from 'react';
 import NavigationComponent from '../components/NavigationComponent';
 import { RouterProvider, createBrowserRouter, Routes, Route } from 'react-router-dom';
 import DashboardContainer from './DashboardContainer' 
-import UnassignedDeliveriesContainer from './UnassignedDeliveriesContainer';
+import DeliveriesContainer from './DeliveriesContainer';
 import OurMapContainer from './OurMapContainer';
 
 const ParentContainer = () => {
@@ -85,7 +85,7 @@ const ParentContainer = () => {
                     },
                     {
                         path: "/deliveries",
-                        element: <UnassignedDeliveriesContainer waypointData={waypointData}/>
+                        element: <DeliveriesContainer waypointData={waypointData}/>
                     }
                 ]
             },

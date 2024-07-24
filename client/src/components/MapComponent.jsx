@@ -4,8 +4,8 @@ import 'leaflet-routing-machine';
 import L from 'leaflet';
 
 const Map = () => {
-const center = [51.505, -0.09]; //map center
-  const position = [51.505, -0.09]; //marker 
+const center = [53.6458, -1.7850]; //map center
+  // const position = [51.505, -0.09]; //marker 
 
   const route = L.Routing.control({
     waypoints: [
@@ -32,11 +32,11 @@ return (
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={position}>
+          {/* <Marker position={position}>
               <Popup>
               Starting point. <br />  6 Southwark St, London SE1 1TQ.
               </Popup>
-          </Marker>
+          </Marker> */}
       </MapContainer>
     </>
 

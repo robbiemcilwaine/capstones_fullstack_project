@@ -35,8 +35,16 @@ const Map = ({waypoints}) => {
   }, [waypoints]);
 
   return (
-    <div id='map'></div>
-  );
+    <div style={{position: 'relative' }}>
+        <div
+            id='map'
+            style={{
+                transform: 'scale(1.5)',
+                transformOrigin: 'center'
+            }}
+        ></div>
+    </div>
+);
 }
 
 export default Map;

@@ -60,7 +60,14 @@ public class DeliveryService {
     }
 
     public List<Delivery> getAllDeliveries(){
-        return deliveryRepository.findAll();
+        List<Delivery> allDeliveries = deliveryRepository.findAll();
+        List<Delivery> newList = new ArrayList<>();
+        for(Delivery delivery : allDeliveries){
+            if(!delivery.getCustomerName().equals("Hub")){
+                newList.add(delivery);
+            }
+        }
+        return newList;
     }
 
     public Delivery getDeliveryById(Long id){

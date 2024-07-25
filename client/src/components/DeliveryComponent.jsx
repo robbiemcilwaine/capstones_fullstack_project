@@ -56,7 +56,7 @@ export default function DeliveryComponent({allWayPointData}) {
                  ${waypoint.delivery.postalDistrict}
                   ${waypoint.delivery.outCode}`}</TableCell>
             <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.id}`}</TableCell>
-            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.route}`}</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.route[0].routeName}`}</TableCell>
             <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.deliveryStatus}`}</TableCell>
           </TableRow>
         ))}

@@ -25,7 +25,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 function preventDefault(event) {}
 
 
-export default function DeliveryComponent({allWayPointData}) {
+export default function DeliveryComponent({allWayPointData,deliveryData}) {
  
   return (
     <React.Fragment>
@@ -46,18 +46,18 @@ export default function DeliveryComponent({allWayPointData}) {
         </TableRow>
       </TableHead>
       <TableBody>
-        {allWayPointData.map((waypoint,index) => (
+        {deliveryData.map((delivery,index) => (
           <TableRow key={index}>
-            <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.customerName}`}</TableCell>
-            <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.houseNumber},
-             ${waypoint.delivery.streetPrefix}
-              ${waypoint.delivery.streetSuffix},
-                ${waypoint.delivery.city},
-                 ${waypoint.delivery.postalDistrict}
-                  ${waypoint.delivery.outCode}`}</TableCell>
-            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.id}`}</TableCell>
-            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.route[0].routeName}`}</TableCell>
-            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${waypoint.delivery.deliveryStatus}`}</TableCell>
+            <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${delivery.customerName}`}</TableCell>
+            <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${delivery.houseNumber},
+             ${delivery.streetPrefix}
+              ${delivery.streetSuffix},
+                ${delivery.city},
+                 ${delivery.postalDistrict}
+                  ${delivery.outCode}`}</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${delivery.id}`}</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${delivery.waypoint.route[0].routeName}`}</TableCell>
+            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${delivery.deliveryStatus}`}</TableCell>
           </TableRow>
         ))}
       </TableBody>

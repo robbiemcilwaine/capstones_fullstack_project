@@ -26,9 +26,6 @@ function preventDefault(event) {}
 export default function DeliveryComponent({ allWayPointData, deliveryData }) {
   return (
     <React.Fragment>
-      <Typography variant="h4" align="center" gutterBottom>
-        Deliveries
-      </Typography>
       <Stack direction="row" spacing={2} padding={1} justifyContent={'center'}>
       </Stack>
       <Box sx={{ margin: '20px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>

@@ -9,19 +9,21 @@ const DeliveriesContainer = ({allWayPointData,deliveryData}) => {
 
     return (
         <>
-        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                <Grid container spacing={3}>
-                    <Grid item xs={12}>
-                        <Paper sx={{ p: 10, display: 'flex', flexDirection: 'column', width: '100%'}}>
+            <main className='main-component-sizing'>
+                <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                    <Grid container spacing={3}>
+                        <Grid item xs={12}>
+                            <Paper sx={{ p: 10, display: 'flex', flexDirection: 'column', width: '100%'}}>
 
 
 
-                        <DeliveryComponent allWayPointData = {allWayPointData} deliveryData = {deliveryData}/>
+                            <DeliveryComponent allWayPointData = {allWayPointData} deliveryData = {deliveryData}/>
 
-                        </Paper>
+                            </Paper>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Container> 
+                </Container> 
+            </main>
         </>
     )
     

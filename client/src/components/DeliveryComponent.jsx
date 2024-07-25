@@ -5,7 +5,7 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { Box } from '@mui/material';
+import { Box, Typography, TableContainer, Paper } from '@mui/material';
 import Button from '@mui/material/Button';
 import RouteIcon from '@mui/icons-material/Route';
 import Stack from '@mui/material/Stack';
@@ -21,48 +21,44 @@ import FileCopyIcon from '@mui/icons-material/FileCopy';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-
 function preventDefault(event) {}
 
-
-export default function DeliveryComponent({allWayPointData,deliveryData}) {
- 
+export default function DeliveryComponent({ allWayPointData, deliveryData }) {
   return (
     <React.Fragment>
-    <h1>Deliveries</h1>
-    <Stack direction="row" spacing={2} padding={1} justifyContent={'center'}>
-    </Stack>
-
-    <Box sx={{ margin: '20px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
-
-    <Table size="small">
-      <TableHead>
-        <TableRow>
-          <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Name</TableCell>
-          <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Address</TableCell>
-          <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Delivery Id</TableCell>
-          <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Route Id</TableCell>
-          <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Delivery Status</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {deliveryData.map((delivery,index) => (
-          <TableRow key={index}>
-            <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${delivery.customerName}`}</TableCell>
-            <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${delivery.houseNumber},
-             ${delivery.streetPrefix}
-              ${delivery.streetSuffix},
-                ${delivery.city},
-                 ${delivery.postalDistrict}
-                  ${delivery.outCode}`}</TableCell>
-            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${delivery.id}`}</TableCell>
-            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${delivery.waypoint.route[0].routeName}`}</TableCell>
-            <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{`${delivery.deliveryStatus}`}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-    </Box>
-  </React.Fragment>
+      <Typography variant="h4" align="center" gutterBottom>
+        Deliveries
+      </Typography>
+      <Stack direction="row" spacing={2} padding={1} justifyContent={'center'}>
+      </Stack>
+      <Box sx={{ margin: '20px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Name</TableCell>
+                <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Address</TableCell>
+                <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Delivery Id</TableCell>
+                <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Route Id</TableCell>
+                <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Delivery Status</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {deliveryData.map((delivery, index) => (
+                <TableRow key={index} hover>
+                  <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>{delivery.customerName}</TableCell>
+                  <TableCell align="left" sx={{ fontSize: '1.125rem', padding: '10px' }}>
+                    {delivery.houseNumber}, {delivery.streetPrefix} {delivery.streetSuffix}, {delivery.city}, {delivery.postalDistrict} {delivery.outCode}
+                  </TableCell>
+                  <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{delivery.id}</TableCell>
+                  <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{delivery.waypoint.route[0].routeName}</TableCell>
+                  <TableCell align="center" sx={{ fontSize: '1.125rem', padding: '10px' }}>{delivery.deliveryStatus}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
+    </React.Fragment>
   );
 }

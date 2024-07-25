@@ -16,15 +16,15 @@ const OurMapContainer = ({ waypointData, setPostalDistrict }) => {
         <h1>Map</h1>
             <div className='route-filter-select'>
                 <select className="big-select" value={selectedDistrict} onChange={handleDistrictChange}>
-                    <option value="HD1">HD1</option>
-                    <option value="HD2">HD2</option>
-                    <option value="HD3">HD3</option>
-                    <option value="HD4">HD4</option>
-                    <option value="HD5">HD5</option>
-                    <option value="HD6">HD6</option>
-                    <option value="HD7">HD7</option>
-                    <option value="HD8">HD8</option>
-                    <option value="HD9">HD9</option>
+                    <option value="HD1">HD1-1</option>
+                    <option value="HD2">HD2-1</option>
+                    <option value="HD3">HD3-1</option>
+                    <option value="HD4">HD4-1</option>
+                    <option value="HD5">HD5-1</option>
+                    <option value="HD6">HD6-1</option>
+                    <option value="HD7">HD7-1</option>
+                    <option value="HD8">HD8-1</option>
+                    <option value="HD9">HD9-1</option>
                 </select>
                 </div>
         <MapContainer  center={[53.6458, -1.785]} zoom={12} id="map">

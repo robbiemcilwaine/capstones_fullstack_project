@@ -4,6 +4,18 @@ import 'leaflet-routing-machine';
 import L from 'leaflet';
 import { useEffect, useState } from 'react';
 
+
+const deliveryIcon = L.icon({
+  iconUrl: "src/assets/deliverybox.png", 
+  iconSize: [30, 30]
+})
+
+const hubIcon = L.icon({
+ 
+  iconUrl : "src/assets/orangedepot.png",
+  iconSize: [80, 60]
+})
+
 const Map = ({ waypoints }) => {
   const defaultCenter = [53.6458, -1.7850]; // map center
   const map = useMap();
@@ -11,7 +23,7 @@ const Map = ({ waypoints }) => {
 
   const calculateCenter = () => {
     if (waypoints && waypoints.length > 0) {
-      const midIndex = Math.floor((waypoints.length - 1) / 2);
+      const midIndex = Math.floor((waypoints.length - 1) / waypoints.length);
       const midPoint = waypoints[midIndex];
       return [midPoint.lat, midPoint.lng];
     }
@@ -31,7 +43,8 @@ const Map = ({ waypoints }) => {
     if (waypoints.length > 0) {
       const route = L.Routing.control({
         waypoints: waypoints.map(wp => L.latLng(wp.lat, wp.lng)),
-        routeWhileDragging: true,
+        routeWhileDragging: false,
+        addWaypoints: false, 
         lineOptions: {
           styles: [
             {
@@ -41,8 +54,13 @@ const Map = ({ waypoints }) => {
             },
           ],
         },
-        createMarker: function () {
-          return null;
+        createMarker: function (i, wp) {
+          if(i == 0){
+            return L.marker(wp.latLng, {icon: hubIcon}).bindPopup(`RainforestRetail Depot`);
+          } else {
+            return L.marker(wp.latLng, {icon : deliveryIcon}).bindPopup(`Delivery Stop ${i}`);
+          }
+          
         },
       }).addTo(map);
 
@@ -50,10 +68,11 @@ const Map = ({ waypoints }) => {
         const routes = e.routes;
         const summary = routes[0].summary;
         const distanceKm = summary.totalDistance / 1000;
+        const roundedKm = distanceKm.toFixed(2)
         const timeMinutes = Math.round(summary.totalTime % 3600 / 60);
 
         setRouteInfo({
-          distance: distanceKm,
+          distance: roundedKm,
           time: timeMinutes
         });
       });
@@ -62,7 +81,7 @@ const Map = ({ waypoints }) => {
   }, [waypoints, map]);
 
   return (
-    <div style={{ position: "relative", height: "100%" }}>
+    <div className = "map-display"style={{ position: "relative", height: "100%" }} >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -71,7 +90,7 @@ const Map = ({ waypoints }) => {
         <p>Total Distance: <br />{routeInfo.distance} km</p>
         <p>Total Time: <br />{routeInfo.time} minutes</p>
       </div>
-    </div>
+    </div> 
   );
 }
 

@@ -49,7 +49,7 @@ footer ul li {
 
 
 .leaflet-routing-container {
-  opacity: 0;
+  display: none;
 }
 
 .route-filter-select {

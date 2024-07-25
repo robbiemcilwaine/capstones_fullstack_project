@@ -56,9 +56,9 @@ const Map = ({waypoints}) => {
       
       setRouteInfo({ 
         distance: distanceKm, 
-        time: timeMinutes });
+        time: timeMinutes 
+      });
     });
-  }
 
   // same as before
   useEffect(() => {

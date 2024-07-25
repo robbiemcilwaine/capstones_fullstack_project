@@ -26,12 +26,9 @@ const OurMapContainer = ({ waypointData, setPostalDistrict }) => {
                     <option value="HD9">HD9</option>
                 </select>
                 </div>
-                <MapContainer>
-            
-                
-         
-                <MapComponent waypoints={waypointData} />
-        </MapContainer>   
+        <MapContainer  center={[53.6458, -1.785]} zoom={12} id="map">
+            <MapComponent waypoints={waypointData} />
+        </MapContainer>  
         
         </>
     );

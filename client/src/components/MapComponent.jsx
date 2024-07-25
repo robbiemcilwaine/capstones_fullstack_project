@@ -62,16 +62,18 @@ const Map = ({ waypoints }) => {
   }, [waypoints, map]);
 
   return (
-    <div style={{ position: "relative", height: "100%" }}>
+    <>
+    <div className = "map-display" style={{ position: "relative", height: "100%" }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <div className='route-info'>
+    </div> 
+    <div className='route-info'>
         <p>Total Distance: <br />{routeInfo.distance} km</p>
         <p>Total Time: <br />{routeInfo.time} minutes</p>
       </div>
-    </div>
+      </>
   );
 }
 

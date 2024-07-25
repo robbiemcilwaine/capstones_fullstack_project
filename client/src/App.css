@@ -80,7 +80,14 @@ footer ul li {
   text-overflow: ellipsis;
   position: absolute;
   top: 10px;
-  left: 950px;
+  left: 1100px;
   width: 200px;
   height: 100px;
+  z-index: 1000;
+}
+
+.map-display {
+  display: flex;
+  height: 100vh;
+  width: 100%;
 }

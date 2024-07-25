@@ -11,7 +11,7 @@ const Map = ({ waypoints }) => {
 
   const calculateCenter = () => {
     if (waypoints && waypoints.length > 0) {
-      const midIndex = Math.floor((waypoints.length - 1) / 2);
+      const midIndex = Math.floor((waypoints.length - 1) / waypoints.length);
       const midPoint = waypoints[midIndex];
       return [midPoint.lat, midPoint.lng];
     }

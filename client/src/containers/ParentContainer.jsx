@@ -9,7 +9,7 @@ const ParentContainer = () => {
 
     const [deliveryData, setDeliveryData] = React.useState([]);
     const [waypointData, setWaypointData] = React.useState([]);
-    const [postalDistrict, setPostalDistrict] = React.useState('HD8');
+    const [postalDistrict, setPostalDistrict] = React.useState('HD1');
     const [allWayPointData, setAllWayPointData] = React.useState([]);
     const [routeData, setRouteData] = React.useState({});   
     const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState({});

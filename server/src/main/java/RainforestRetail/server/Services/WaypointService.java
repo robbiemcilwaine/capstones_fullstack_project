@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,12 +62,14 @@ public class WaypointService {
     public List<Waypoint> getWaypointsByPostalDistrict(String postalDistrict){
         List<Waypoint> allWaypointsInPostalDistrict = new ArrayList<>();
         for(Delivery delivery : deliveryRepository.findAll()){
-            if(delivery.getPostalDistrict().equals(postalDistrict)){
+            if(delivery.getPostalDistrict().equals(postalDistrict) || delivery.getCustomerName().equals("Hub")){
             allWaypointsInPostalDistrict.add(delivery.getWaypoint());
         }
 
 
     }
+
+        Collections.reverse(allWaypointsInPostalDistrict);
         return allWaypointsInPostalDistrict;
 
 

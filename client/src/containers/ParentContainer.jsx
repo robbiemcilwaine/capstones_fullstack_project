@@ -2,17 +2,20 @@ import * as React from 'react';
 import NavigationComponent from '../components/NavigationComponent';
 import { RouterProvider, createBrowserRouter, Routes, Route } from 'react-router-dom';
 import DashboardContainer from './DashboardContainer' 
-import UnassignedDeliveriesContainer from './UnassignedDeliveriesContainer';
+import DeliveriesContainer from './DeliveriesContainer';
 import OurMapContainer from './OurMapContainer';
+import ResponsiveLayout from '../components/ResponsiveLayout';
 
 const ParentContainer = () => {
 
     const [deliveryData, setDeliveryData] = React.useState([]);
     const [waypointData, setWaypointData] = React.useState([]);
     const [postalDistrict, setPostalDistrict] = React.useState('HD1');
+    const [allWayPointData, setAllWayPointData] = React.useState([]);
+  
 
    
-    const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState(null);
+    const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState({});
 
 
     const fetchAllDeliveries = async () => {
@@ -21,6 +24,13 @@ const ParentContainer = () => {
         setDeliveryData(deliveryData);
     }
 
+    const fetchAllWaypoints = async () => {
+        const response = await fetch("http://localhost:8080/waypoints");
+        const allWayPointData = await response.json();
+        setAllWayPointData(allWayPointData);
+    }
+
+ 
     const fetchWaypointByPostalDistrict = async (postalDistrict) => {
         const response = await fetch(`http://localhost:8080/deliveries/postalDistrict/${postalDistrict}`);
         const deliveryData = await response.json();
@@ -38,6 +48,7 @@ const ParentContainer = () => {
 
     React.useEffect(() => {
         fetchAllDeliveries();
+        fetchAllWaypoints();
     },[])
 
     const fetchDeliveryByPostalDistrict = async (postalDistrict) => {
@@ -77,7 +88,7 @@ const ParentContainer = () => {
                 children: [
                     {
                         path: "/",
-                        element: <DashboardContainer deliveryData={deliveryData}/>
+                        element: <DashboardContainer deliveryByPostalDistrict={deliveryByPostalDistrict}/>
                     },
                     {
                         path: "/map",
@@ -85,7 +96,7 @@ const ParentContainer = () => {
                     },
                     {
                         path: "/deliveries",
-                        element: <UnassignedDeliveriesContainer waypointData={waypointData}/>
+                        element: <DeliveriesContainer allWayPointData ={allWayPointData}/>
                     }
                 ]
             },
@@ -99,7 +110,9 @@ const ParentContainer = () => {
     return (
         <>
         <main>
-            <RouterProvider router={router}/>
+            <ResponsiveLayout>
+                <RouterProvider router={router}/>
+            </ResponsiveLayout>
         </main>
         </>
     )

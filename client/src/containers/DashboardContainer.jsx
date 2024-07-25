@@ -4,7 +4,7 @@ import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
 import { CenterFocusStrong } from "@mui/icons-material";
 
-const DashboardContainer = ({deliveryData}) => {
+const DashboardContainer = ({deliveryByPostalDistrict}) => {
     return (
         <>
         <h1>Current Deliveries</h1>
@@ -12,7 +12,7 @@ const DashboardContainer = ({deliveryData}) => {
                 <Grid container spacing={3} justifyContent='center'>
                     <Grid item xs={12}>
                         <Paper sx={{p: 10, display: 'flex', flexDirection: 'column', maxWidth: '1200px', margin: '0 auto'}}>
-                            <Dashboard deliveryData={deliveryData}/>
+                            <Dashboard deliveryByPostalDistrict={deliveryByPostalDistrict}/>
                         </Paper>
                     </Grid>
                 </Grid>

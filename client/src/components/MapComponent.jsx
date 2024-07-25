@@ -18,6 +18,12 @@ const Map = ({waypoints}) => {
   };
   // calculates the bounds and fits it based on the waypoints, then calculates the center 
   useEffect(() => {
+    const map = L.map('map').setView(center, 12);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
     if (waypoints.length > 0) {
       const bounds = L.latLngBounds(waypoints.map(wp => L.latLng(wp.lat, wp.lng)));
       map.fitBounds(bounds);

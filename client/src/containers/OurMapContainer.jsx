@@ -1,3 +1,4 @@
+import { MapContainer } from 'react-leaflet';
 import MapComponent from '../components/MapComponent';
 import { useState } from 'react';
 
@@ -24,9 +25,11 @@ const OurMapContainer = ({ waypointData, setPostalDistrict }) => {
                     <option value="HD8">HD8</option>
                     <option value="HD9">HD9</option>
                 </select>
-            </div>
-                <MapComponent waypoints={waypointData} />
-        </>
+                </div>
+        <MapContainer  center={[53.6458, -1.785]} zoom={12} id="map">
+            <MapComponent waypoints={waypointData} />
+        </MapContainer>  
+      </>
     );
 }
 

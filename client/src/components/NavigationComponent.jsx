@@ -122,7 +122,7 @@ const NavigationComponent = () => {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <CustomAppBar position="fixed" open={open}>
-        <Toolbar>
+        <Toolbar sx={{backgroundColor: '#0F5132'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"

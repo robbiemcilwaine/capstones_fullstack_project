@@ -9,7 +9,7 @@ export default function DashboardComponent({ deliveryByPostalDistrict, routeData
     <React.Fragment>
       <Box sx={{ margin: 'auto', padding:'auto', backgroundColor: '', borderRadius: '8px' }}>
         <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+          <Table sx={{ minWidth: 650, backgroundColor: '#D3D0CB'}} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
                 <TableCell align="center" sx={{ fontSize: '1.5rem', paddingLeft: '50px', paddingRight: '50px' }}>Route ID</TableCell>

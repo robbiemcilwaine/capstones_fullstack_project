@@ -18,7 +18,7 @@ body {
 }
 
 .header-colour {
-  color: #3CF44C;
+  color: white;
 }
 
 .data-table {
@@ -42,10 +42,12 @@ footer {
   margin-top: 20px;
   text-align: center;
   margin: auto;
-  background-color: #f8f8f8;
+  background-color: #0F5132;
   padding: 10px 0;
   width: 20%;
   align-items: center;
+  border-radius: 15px;
+  color: white;
 }
 
 footer ul {

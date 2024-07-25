@@ -6,14 +6,14 @@ import { useEffect, useState } from 'react';
 
 
 const deliveryIcon = L.icon({
-  iconUrl: "https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iNjgyLTEyOS1wXzEucG5n.png",
-  iconSize: [50, 50]
+  iconUrl: "src/assets/deliverybox.png", 
+  iconSize: [30, 30]
 })
 
 const hubIcon = L.icon({
  
-  iconUrl :  "https://www.cleanpng.com/png-warehouse-building-logistics-industry-warehouse-920806/",
-  iconSize: [50, 50]
+  iconUrl : "src/assets/orangedepot.png",
+  iconSize: [80, 60]
 })
 
 const Map = ({ waypoints }) => {

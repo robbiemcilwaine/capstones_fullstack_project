@@ -2,10 +2,11 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import "leaflet/dist/leaflet.css"; 
 import 'leaflet-routing-machine'; 
 import L from 'leaflet';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Map = ({waypoints}) => {
   const center = [53.6458, -1.7850]; // map center
+  const [routeInfo, setRouteInfo] = useState({ distance: 0, time: 0 });
 
   useEffect(() => {
     const map = L.map('map').setView(center, 12);
@@ -29,6 +30,17 @@ const Map = ({waypoints}) => {
       },
       createMarker: function() { return null; }
     }).addTo(map);
+
+    route.on('routesfound', function(e) {
+      const routes = e.routes;
+      const summary = routes[0].summary;
+      const distanceKm = summary.totalDistance / 1000;
+      const timeMinutes = Math.round(summary.totalTime % 3600 / 60);
+      
+      setRouteInfo({ 
+        distance: distanceKm, 
+        time: timeMinutes });
+    });
   }
 
     return () => map.remove();
@@ -44,6 +56,10 @@ const Map = ({waypoints}) => {
                 transformOrigin: 'center'
             }}
         ></div>
+        <div className='route-info'>
+          <p>Total Distance: <br />{routeInfo.distance} km</p>
+          <p>Total Time: <br />{routeInfo.time} minutes</p>
+      </div>
     </div>
 );
 }

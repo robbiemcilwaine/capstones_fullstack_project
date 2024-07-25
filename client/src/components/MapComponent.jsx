@@ -31,7 +31,8 @@ const Map = ({ waypoints }) => {
     if (waypoints.length > 0) {
       const route = L.Routing.control({
         waypoints: waypoints.map(wp => L.latLng(wp.lat, wp.lng)),
-        routeWhileDragging: true,
+        routeWhileDragging: false,
+        addWaypoints: false, 
         lineOptions: {
           styles: [
             {
@@ -41,8 +42,13 @@ const Map = ({ waypoints }) => {
             },
           ],
         },
-        createMarker: function () {
-          return null;
+        createMarker: function (i, wp) {
+          if(i == 0){
+            return L.marker(wp.latLng).bindPopup(`RainforestRetail Depot`);
+          } else {
+            return L.marker(wp.latLng).bindPopup(`Delivery Stop ${i + 1}`);
+          }
+          
         },
       }).addTo(map);
 

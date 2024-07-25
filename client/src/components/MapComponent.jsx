@@ -17,7 +17,7 @@ const Map = ({ waypoints }) => {
     }
     return defaultCenter;
   };
-
+// calculates the bounds and fits it based on the waypoints, then calculates the center
   useEffect(() => {
     if (waypoints.length > 0) {
       const bounds = L.latLngBounds(waypoints.map(wp => L.latLng(wp.lat, wp.lng)));
@@ -25,16 +25,8 @@ const Map = ({ waypoints }) => {
     } else {
       map.setView(calculateCenter(), 12);
     }
-  }, [waypoints, map]); useEffect(() => {
-    if (waypoints.length > 0) {
-      const bounds = L.latLngBounds(waypoints.map(wp => L.latLng(wp.lat, wp.lng)));
-      map.fitBounds(bounds);
-    } else {
-      map.setView(calculateCenter(), 12);
-    }
-  }, [waypoints, map]);
-
-  // calculates the bounds and fits it based on the waypoints, then calculates the center
+  }, [waypoints, map]); 
+  
   useEffect(() => {
     if (waypoints.length > 0) {
       const route = L.Routing.control({
@@ -65,33 +57,6 @@ const Map = ({ waypoints }) => {
           time: timeMinutes
         });
       });
-      return () => map.removeControl(route);
-    }
-  }, [waypoints, map]);
-
-
-
-
-
-  // same as before
-  useEffect(() => {
-    if (waypoints.length > 0) {
-      const route = L.Routing.control({
-        waypoints: waypoints.map(wp => L.latLng(wp.lat, wp.lng)),
-        routeWhileDragging: true,
-        lineOptions: {
-          styles: [
-            {
-              color: "blue",
-              opacity: 0.6,
-              weight: 4,
-            },
-          ],
-        },
-        createMarker: function () {
-          return null;
-        },
-      }).addTo(map);
       return () => map.removeControl(route);
     }
   }, [waypoints, map]);

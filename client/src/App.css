@@ -3,6 +3,8 @@
   width: 1200px;
   justify-content: center;
   align-items: center;
+  left: 170px;
+  margin-top: -70px;
 
 }
 
@@ -17,11 +19,12 @@
 }
 
 body {
-  background-color: black;
+  background-color: #36454F;
 }
 
 .header-colour {
   color: white;
+  margin-top: -50px;
 }
 
 .data-table {
@@ -40,11 +43,9 @@ body {
 
   }
 
-
 footer {
-  margin-top: 20px;
   text-align: center;
-  margin: auto;
+  margin-top: 70px;
   background-color: #0F5132;
   padding: 10px 0;
   width: 20%;
@@ -71,16 +72,15 @@ footer ul li {
   display: flex;
   justify-content: center;
   margin-bottom: 2px;
-  position:relative;
   top: 1px;
-  right: 700px;
+  left: 500px;
   z-index: 1000; 
 }
 
 .big-select {
   width: 200px;
   height: 70px;
-
+  border-radius: 10px;
   font-size: 16px;
   padding: 5px;
   background-color: #0F5132;
@@ -105,10 +105,7 @@ footer ul li {
 }
 
 .map-display {
-
 display: flex;
-
- 
 }
 
 .main-component-sizing {

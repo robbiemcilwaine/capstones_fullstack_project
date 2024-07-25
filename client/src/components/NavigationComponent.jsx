@@ -27,7 +27,7 @@ const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -98,10 +98,10 @@ const NavigationDrawer = ({ open, handleDrawerToggle }) => (
         <ListItem key={text} disablePadding>
           <NavLink to={text === 'Home' ? '/' : `/${text.toLowerCase()}`} style={{ textDecoration: 'none' }}>
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon sx={{ color: '#0F5132' }}>
                 {icon}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text} primaryTypographyProps={{color: 'black', fontWeight: 'bold'}}/>
             </ListItemButton>
           </NavLink>
         </ListItem>

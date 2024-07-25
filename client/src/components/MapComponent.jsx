@@ -4,6 +4,18 @@ import 'leaflet-routing-machine';
 import L from 'leaflet';
 import { useEffect, useState } from 'react';
 
+
+const deliveryIcon = L.icon({
+  iconUrl: "https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iNjgyLTEyOS1wXzEucG5n.png",
+  iconSize: [50, 50]
+})
+
+const hubIcon = L.icon({
+ 
+  iconUrl :  "https://www.cleanpng.com/png-warehouse-building-logistics-industry-warehouse-920806/",
+  iconSize: [50, 50]
+})
+
 const Map = ({ waypoints }) => {
   const defaultCenter = [53.6458, -1.7850]; // map center
   const map = useMap();
@@ -44,9 +56,9 @@ const Map = ({ waypoints }) => {
         },
         createMarker: function (i, wp) {
           if(i == 0){
-            return L.marker(wp.latLng).bindPopup(`RainforestRetail Depot`);
+            return L.marker(wp.latLng, {icon: hubIcon}).bindPopup(`RainforestRetail Depot`);
           } else {
-            return L.marker(wp.latLng).bindPopup(`Delivery Stop ${i + 1}`);
+            return L.marker(wp.latLng, {icon : deliveryIcon}).bindPopup(`Delivery Stop ${i}`);
           }
           
         },

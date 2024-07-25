@@ -4,7 +4,7 @@ import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
 
 
-const DeliveriesContainer = ({allWayPointData}) => {
+const DeliveriesContainer = ({allWayPointData,deliveryData}) => {
 
 
     return (
@@ -16,7 +16,7 @@ const DeliveriesContainer = ({allWayPointData}) => {
 
 
 
-                        <DeliveryComponent allWayPointData = {allWayPointData}/>
+                        <DeliveryComponent allWayPointData = {allWayPointData} deliveryData = {deliveryData}/>
 
                         </Paper>
                     </Grid>

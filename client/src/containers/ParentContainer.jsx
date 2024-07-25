@@ -113,7 +113,7 @@ const ParentContainer = () => {
                     },
                     {
                         path: "/deliveries",
-                        element: <DeliveriesContainer allWayPointData ={allWayPointData}/>
+                        element: <DeliveriesContainer allWayPointData ={allWayPointData} deliveryData = {deliveryData}/>
                     }
                 ]
             },

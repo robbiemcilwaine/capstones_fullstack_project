@@ -50,10 +50,11 @@ const Map = ({ waypoints }) => {
         const routes = e.routes;
         const summary = routes[0].summary;
         const distanceKm = summary.totalDistance / 1000;
+        const roundedKm = distanceKm.toFixed(2)
         const timeMinutes = Math.round(summary.totalTime % 3600 / 60);
 
         setRouteInfo({
-          distance: distanceKm,
+          distance: roundedKm,
           time: timeMinutes
         });
       });

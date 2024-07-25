@@ -11,16 +11,10 @@ const DeliveriesContainer = ({allWayPointData,deliveryData}) => {
         <>
         <h1 className="header-colour">Deliveries</h1>
             <main className='main-component-sizing'>
-                <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Container maxWidth="lg" sx={{ mt: 4, mb: 4}}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
-                            <Paper sx={{ p: 10, display: 'flex', flexDirection: 'column', width: '100%'}}>
-
-
-
-                            <DeliveryComponent allWayPointData = {allWayPointData} deliveryData = {deliveryData}/>
-
-                            </Paper>
+                            <DeliveryComponent allWayPointData = {allWayPointData} deliveryData = {deliveryData}/>  
                         </Grid>
                     </Grid>
                 </Container> 

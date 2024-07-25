@@ -12,9 +12,7 @@ const DashboardContainer = ({deliveryByPostalDistrict, routeData}) => {
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4, display: 'flex',  justifyContent: "center"}}>
                 <Grid container spacing={3} justifyContent='center'>
                     <Grid item xs={12}>
-                        <Paper sx={{p: 10, display: 'flex', flexDirection: 'column', maxWidth: '1200px', margin: '0 auto'}}>
                             <Dashboard deliveryByPostalDistrict={deliveryByPostalDistrict} routeData = {routeData}/>
-                        </Paper>
                     </Grid>
                 </Grid>
             </Container>

@@ -7,7 +7,7 @@ export default function DashboardComponent({ deliveryByPostalDistrict, routeData
 
   return (
     <React.Fragment>
-      <Box sx={{ margin: '20px', padding: '20px', backgroundColor: '', borderRadius: '8px' }}>
+      <Box sx={{ margin: 'auto', padding:'auto', backgroundColor: '', borderRadius: '8px' }}>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
             <TableHead>

@@ -28,9 +28,9 @@ export default function DeliveryComponent({ allWayPointData, deliveryData }) {
     <React.Fragment>
       <Stack direction="row" spacing={2} padding={1} justifyContent={'center'}>
       </Stack>
-      <Box sx={{ margin: '20px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
+      <Box sx={{ margin: 'auto', padding: 'auto', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
         <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+          <Table sx={{ minWidth: 650}} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
                 <TableCell align="center" sx={{ fontSize: '1.5rem', padding: '12px' }}>Name</TableCell>

@@ -7,14 +7,18 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #ECCC98;
+  background-color: #36454F;
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
 body {
-  background-color: #ECCC98;
+  background-color: black;
+}
+
+.header-colour {
+  color: #3CF44C;
 }
 
 .data-table {

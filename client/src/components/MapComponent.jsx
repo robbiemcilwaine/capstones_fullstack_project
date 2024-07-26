@@ -81,7 +81,7 @@ const Map = ({ waypoints }) => {
   }, [waypoints, map]);
 
   return (
-    <div className = "map-display"style={{ position: "relative", height: "100%" }} >
+    <div className = "map-display" >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

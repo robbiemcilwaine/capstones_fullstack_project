@@ -48,9 +48,9 @@ const Map = ({ waypoints }) => {
         lineOptions: {
           styles: [
             {
-              color: "blue",
-              opacity: 0.6,
-              weight: 4,
+              color: '#0F5132',
+              opacity: 0.9,
+              weight: 5,
             },
           ],
         },

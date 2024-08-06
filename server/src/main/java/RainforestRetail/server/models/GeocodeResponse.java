@@ -102,8 +102,7 @@ public class GeocodeResponse {
             this.scoring = scoring;
         }
 
-        @Getter
-        @Setter
+
         public static class Address {
             private String label;
             private String countryCode;
@@ -143,15 +142,13 @@ public class GeocodeResponse {
 
 
 
-        @Getter
-        @Setter
+
         public static class Access {
             private double lat;
             private double lng;
         }
 
-        @Getter
-        @Setter
+
         public static class MapView {
             private double west;
             private double south;
@@ -159,14 +156,12 @@ public class GeocodeResponse {
             private double north;
         }
 
-        @Getter
-        @Setter
+
         public static class Scoring {
             private double queryScore;
             private FieldScore fieldScore;
 
-            @Getter
-            @Setter
+
             public static class FieldScore {
                 private double state;
                 private double city;

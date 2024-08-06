@@ -121,6 +121,10 @@ public class RouteService {
         route.setListOfWaypoints(newListOfWayPoints);
     }
 
+    public List<Route> getAllRoutes(){
+        return routeRepository.findAll();
+    }
+
 
 
 }

@@ -70,7 +70,7 @@ Several factors could prevent the success of this project. Adverse weather condi
 
 ## Wireframe and Component Diagram - MVP
 ![Wireframe](assets/wireframe.png)
-<img width="958" alt="Component" src="https://github.com/user-attachments/assets/7a8e56b5-e4cf-4e9e-b8e9-ebbb23c0ed59">
+![Component Diagram](assets/component_diagram.png)
 
 
 

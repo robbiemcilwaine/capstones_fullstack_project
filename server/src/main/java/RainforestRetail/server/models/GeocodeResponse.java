@@ -5,8 +5,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Getter
-@Setter
+
 public class GeocodeResponse {
 
     private List<Item> items;

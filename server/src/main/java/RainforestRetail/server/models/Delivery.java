@@ -110,7 +110,7 @@ public class Delivery {
     }
 
     public void setWaypoint(Waypoint waypoint) {
-        System.out.println("is it setting waypoint?");
+
         this.waypoint = waypoint;
     }
 

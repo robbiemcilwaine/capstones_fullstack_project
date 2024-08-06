@@ -43,7 +43,7 @@ public class WaypointService {
         waypointRepository.save(waypoint);
         delivery.setWaypoint(waypoint);
         deliveryRepository.save(delivery);
-        System.out.println("this is the waypoint id" + delivery.getWaypoint().getId());
+
         return waypoint;
 
 

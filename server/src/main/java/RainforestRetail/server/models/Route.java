@@ -62,7 +62,7 @@ public class Route {
     }
 
     public void setListOfWaypoints(List<Waypoint> listOfWaypoints) {
-        System.out.println("is list of waypoints setting");
+
         this.listOfWaypoints = listOfWaypoints;
     }
 

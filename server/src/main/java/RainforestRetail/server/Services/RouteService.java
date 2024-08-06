@@ -76,7 +76,7 @@ public class RouteService {
 //        }
 
         for (Waypoint waypoint : allWaypointsInPostalDistrict) {
-            System.out.println("checking if allWaypointsInPostalDistrictWorks" + waypoint.getId());
+
 
 
             if (waypoint.getRoute() == null) {

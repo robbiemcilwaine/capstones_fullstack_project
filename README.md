@@ -69,7 +69,7 @@ Several factors could prevent the success of this project. Adverse weather condi
 - **[Leaflet](https://leafletjs.com)**
 
 ## Wireframe and Component Diagram - MVP
-![Wireframe](https://github.com/user-attachments/assets/0b11c197-0009-496a-98d7-17f9473aa061)
+![Wireframe](assets/wireframe.png)
 <img width="958" alt="Component" src="https://github.com/user-attachments/assets/7a8e56b5-e4cf-4e9e-b8e9-ebbb23c0ed59">
 
 

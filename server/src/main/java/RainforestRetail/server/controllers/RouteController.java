@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 
-@Controller
+
 @RestController
 @RequestMapping("/routes")
 public class RouteController {
@@ -31,7 +31,7 @@ public class RouteController {
     @GetMapping
     public ResponseEntity<List<Route>> getAllRoutes(){
         routeService.reverseRoutesWaypointList();
-        List<Route> allRoutes = routeRepository.findAll();
+        List<Route> allRoutes = routeService.getAllRoutes();
         return new ResponseEntity<>(allRoutes, HttpStatus.OK);
 
     }

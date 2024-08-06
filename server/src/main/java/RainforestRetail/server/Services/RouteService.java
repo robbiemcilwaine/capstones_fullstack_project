@@ -76,7 +76,7 @@ public class RouteService {
 //        }
 
         for (Waypoint waypoint : allWaypointsInPostalDistrict) {
-            System.out.println("checking if allWaypointsInPostalDistrictWorks" + waypoint.getId());
+
 
 
             if (waypoint.getRoute() == null) {
@@ -119,6 +119,10 @@ public class RouteService {
         List<Waypoint> newListOfWayPoints = route.getListOfWaypoints();
         newListOfWayPoints.add(0,convertDeliveryToWaypoint);
         route.setListOfWaypoints(newListOfWayPoints);
+    }
+
+    public List<Route> getAllRoutes(){
+        return routeRepository.findAll();
     }
 
 

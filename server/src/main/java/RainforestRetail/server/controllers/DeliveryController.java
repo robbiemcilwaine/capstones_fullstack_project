@@ -23,7 +23,7 @@ import java.util.Optional;
 import static javax.print.attribute.standard.ReferenceUriSchemesSupported.HTTP;
 import static javax.print.attribute.standard.ReferenceUriSchemesSupported.HTTPS;
 
-@Controller
+
 @RestController
 @RequestMapping("/deliveries")
 public class DeliveryController {

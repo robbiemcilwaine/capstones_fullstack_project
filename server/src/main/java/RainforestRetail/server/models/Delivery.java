@@ -55,6 +55,7 @@ public class Delivery {
     @JsonIgnoreProperties({"delivery"})
     private Waypoint waypoint;
 
+
     public Delivery(String customerName, String houseNumber, String streetPrefix, String streetSuffix, String city, String postalDistrict, String outCode, DeliveryStatus deliveryStatus) {
         this.customerName = customerName;
 
@@ -109,7 +110,7 @@ public class Delivery {
     }
 
     public void setWaypoint(Waypoint waypoint) {
-        System.out.println("is it setting waypoint?");
+
         this.waypoint = waypoint;
     }
 
@@ -154,10 +155,3 @@ public class Delivery {
     }
 }
 
-//    public Route getRoute() {
-//        return route;
-//    }
-//
-//    public void setRoute(Route route) {
-//        this.route = route;
-//    }

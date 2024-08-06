@@ -1,14 +1,12 @@
 package RainforestRetail.server.components;
 
-import RainforestRetail.server.Services.DeliveryService;
 import RainforestRetail.server.Services.RouteService;
 import RainforestRetail.server.Services.WaypointService;
 import RainforestRetail.server.models.Delivery;
 import RainforestRetail.server.models.DeliveryStatus;
-import RainforestRetail.server.models.Waypoint;
+
 import RainforestRetail.server.repositories.DeliveryRepository;
-import RainforestRetail.server.repositories.RouteRepository;
-import RainforestRetail.server.repositories.WaypointRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -20,17 +18,12 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     DeliveryRepository deliveryRepository;
 
-    @Autowired
-    RouteRepository routeRepository;
+
 
     @Autowired
     RouteService routeService;
 
-    @Autowired
-    WaypointRepository waypointRepository;
 
-    @Autowired
-    DeliveryService deliveryService;
 
     @Autowired
     WaypointService waypointService;
@@ -38,7 +31,7 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-//        Delivery delivery = new Delivery("Aaron", "119", "Orchard", "Way", "London", "CR0" , null, false, DeliveryStatus.UNDELIVERED);
+
 
 
 

@@ -11,7 +11,7 @@ import java.util.Collections;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 import static java.util.Collections.reverse;
 
@@ -67,13 +67,7 @@ public class RouteService {
         route.setListOfWaypoints(allWaypointsInPostalDistrict);
         routeRepository.save(route);
 
-//        for(Waypoint waypoint:allWaypointsInPostalDistrict){
-//            System.out.println("checking if allWaypointsInPostalDistrictWorks" + waypoint.getId());
-//            List<Route> routeList = new ArrayList<>();
-//            routeList.add(route);
-//            waypoint.setRoute(routeList);
-//            waypointRepository.save(waypoint);
-//        }
+
 
         for (Waypoint waypoint : allWaypointsInPostalDistrict) {
 

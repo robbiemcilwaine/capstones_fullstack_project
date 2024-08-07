@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+import { TileLayer, useMap } from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
 import 'leaflet-routing-machine';
 import L from 'leaflet';
@@ -81,6 +81,7 @@ const Map = ({ waypoints }) => {
   }, [waypoints, map]);
 
   return (
+    <>
     <div className = "map-display" >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -91,6 +92,7 @@ const Map = ({ waypoints }) => {
         <p>Total Time: <br />{routeInfo.time} minutes</p>
       </div>
     </div> 
+    </>
   );
 }
 

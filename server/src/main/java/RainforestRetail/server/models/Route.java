@@ -25,10 +25,7 @@ public class Route {
     @Column(name = "route_status", nullable = false)
     private RouteStatus routeStatus;
 
-//    //One-to-many relationship with Waypoints
-//    @OneToMany(mappedBy = "route")
-//    @JsonIgnoreProperties({"route"})
-//    private List<Waypoint> listOfWaypoints;
+
 
     @ManyToMany
     @JoinTable(

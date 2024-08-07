@@ -1,6 +1,6 @@
 import { MapContainer} from 'react-leaflet';
 import MapComponent from '../components/MapComponent';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const OurMapContainer = ({ waypointData, setPostalDistrict }) => {
     const [selectedDistrict, setSelectedDistrict] = useState('HD1');

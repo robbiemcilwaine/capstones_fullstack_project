@@ -1,8 +1,6 @@
 import Dashboard from "../components/DashboardComponent";
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
-import { CenterFocusStrong } from "@mui/icons-material";
 
 const DashboardContainer = ({deliveryByPostalDistrict, routeData}) => {
     return (

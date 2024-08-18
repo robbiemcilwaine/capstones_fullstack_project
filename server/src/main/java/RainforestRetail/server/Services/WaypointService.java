@@ -8,7 +8,7 @@ import RainforestRetail.server.repositories.WaypointRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,8 +25,7 @@ public class WaypointService {
     @Autowired
     WaypointRepository waypointRepository;
 
-    @Autowired
-    private RestTemplate restTemplate;
+
 
     @Autowired
     DeliveryService deliveryService;

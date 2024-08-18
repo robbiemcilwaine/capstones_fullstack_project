@@ -1,6 +1,6 @@
-import * as React from 'react';
+import {useState, useEffect} from 'react';
 import NavigationComponent from '../components/NavigationComponent';
-import { RouterProvider, createBrowserRouter, Routes, Route } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter} from 'react-router-dom';
 import DashboardContainer from './DashboardContainer' 
 import DeliveriesContainer from './DeliveriesContainer';
 import OurMapContainer from './OurMapContainer';
@@ -8,13 +8,13 @@ import ResponsiveLayout from '../components/ResponsiveLayout';
 
 const ParentContainer = () => {
 
-    const [deliveryData, setDeliveryData] = React.useState([]);
-    const [waypointData, setWaypointData] = React.useState([]);
-    const [postalDistrict, setPostalDistrict] = React.useState('HD1');
-    const [allWayPointData, setAllWayPointData] = React.useState([]);
-    const [routeData, setRouteData] = React.useState({});   
-    const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = React.useState({});
-    const [waypointsTestv2, setWaypointsTestV2] = React.useState({});
+    const [deliveryData, setDeliveryData] = useState([]);
+    const [waypointData, setWaypointData] = useState([]);
+    const [postalDistrict, setPostalDistrict] = useState('HD1');
+    const [allWayPointData, setAllWayPointData] = useState([]);
+    const [routeData, setRouteData] = useState({});   
+    const [deliveryByPostalDistrict, setDeliveryByPostalDistrict] = useState({});
+    const [waypointsTestv2, setWaypointsTestV2] = useState({});
 
     const fetchRouteData= async () => {
         const response = await fetch("http://localhost:8080/routes");
@@ -55,11 +55,11 @@ const ParentContainer = () => {
     }
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         fetchWaypointByPostalDistrict(postalDistrict); 
     }, [postalDistrict])
 
-    React.useEffect(() => {
+    useEffect(() => {
         fetchAllDeliveries();
         fetchAllWaypoints();
         fetchRouteData();
@@ -68,9 +68,7 @@ const ParentContainer = () => {
 
     const fetchDeliveryByPostalDistrict = async (postalDistrict) => {
         const response = await fetch(`http://localhost:8080/deliveries/postalDistrict/${postalDistrict}`);
-        console.log("this is the response",response);
         const deliveryDataByPostcode = await response.json();
-        console.log("this is delivery data",deliveryDataByPostcode)
         setDeliveryByPostalDistrict(
             (prevState) => ({
                 ...prevState,
@@ -78,7 +76,7 @@ const ParentContainer = () => {
         ));
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
         fetchDeliveryByPostalDistrict("HD1")
         fetchDeliveryByPostalDistrict("HD2")
         fetchDeliveryByPostalDistrict("HD3")
@@ -90,12 +88,6 @@ const ParentContainer = () => {
         fetchDeliveryByPostalDistrict("HD9")
     }, [])
 
-
-    console.log("this is all deleviers in a key - valuepair", deliveryByPostalDistrict)
-    console.log("this is route data for postal district", waypointsTestv2);
-
-    console.log("this is hd2 ", waypointData);
-   
     const router = createBrowserRouter(
 
         [
@@ -120,10 +112,6 @@ const ParentContainer = () => {
         ]
 
     )
-
-    console.log(router);
-
-
     return (
         <>
         <main>

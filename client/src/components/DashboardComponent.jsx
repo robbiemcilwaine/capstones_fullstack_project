@@ -1,12 +1,9 @@
-import * as React from 'react';
-import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Paper } from '@mui/material';
+import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 
 export default function DashboardComponent({ deliveryByPostalDistrict, routeData }) {
 
-  console.log("this is route data", routeData);
-
   return (
-    <React.Fragment>
+    <>
       <Box sx={{ margin: 'auto', padding:'auto', backgroundColor: '', borderRadius: '8px' }}>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650, backgroundColor: '#D3D0CB'}} size="small" aria-label="a dense table">
@@ -43,6 +40,6 @@ export default function DashboardComponent({ deliveryByPostalDistrict, routeData
           </Table>
         </TableContainer>
       </Box>
-    </React.Fragment>
+    </>
   );
 }

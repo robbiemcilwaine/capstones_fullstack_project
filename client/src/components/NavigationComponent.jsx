@@ -1,4 +1,4 @@
-import * as React from 'react';
+import {useState} from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -112,7 +112,7 @@ const NavigationDrawer = ({ open, handleDrawerToggle }) => (
 
 const NavigationComponent = () => {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false); // Start with drawer closed
+  const [open, setOpen] = useState(false); // Start with drawer closed
 
   const handleDrawerToggle = () => {
     setOpen(!open);

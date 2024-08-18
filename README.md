@@ -59,7 +59,7 @@ Several factors could prevent the success of this project. Adverse weather condi
 
 
 ## Unified Modeling Language and Entity Relationship Diagram - MVP
-<img width="1102" alt="UML" src="https://github.com/user-attachments/assets/c934b2f0-e1eb-4110-a820-cbb1b34c8d5a">
+![UML](assets/UML.png)
 <img width="747" alt="ERD" src="https://github.com/user-attachments/assets/36717a50-f759-4fb8-a5f3-c60886377a07">
 
 ## Tech Stack - Client Side
@@ -69,8 +69,8 @@ Several factors could prevent the success of this project. Adverse weather condi
 - **[Leaflet](https://leafletjs.com)**
 
 ## Wireframe and Component Diagram - MVP
-![Wireframe](https://github.com/user-attachments/assets/0b11c197-0009-496a-98d7-17f9473aa061)
-<img width="958" alt="Component" src="https://github.com/user-attachments/assets/7a8e56b5-e4cf-4e9e-b8e9-ebbb23c0ed59">
+![Wireframe](assets/wireframe.png)
+![Component Diagram](assets/component_diagram.png)
 
 
 
